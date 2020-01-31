@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			$("#course1").click(function() {
+				$("#htmlcourse").css({"display":"block"});
+				$("#csscourse").css({"display":"none"});
+				$("#jscourse").css({"display":"none"});
+
+			});
+
+			$("#course2").click(function() {
+				$("#csscourse").css({"display":"block"});
+				$("#htmlcourse").css({"display":"none"});
+				$("#jscourse").css({"display":"none"});
+
+			});
+
+			$("#course3").click(function() {
+				$("#jscourse").css({"display":"block"});
+				$("#htmlcourse").css({"display":"none"});
+				$("#csscourse").css({"display":"none"});
+
+			});
+		});
+	</script>
+
+</head>
+<body>
+	<div id="navbar">
+		<div class="container">
+				<ul>
+					
+					<li id="contact"><a href="#">CONTACT</a><div id="bar31"></div></li>
+					<li id="services"><a href="#">SERVICES</a><div id="bar32"></div></li>
+					<li id="home"><a href="#">HOME</a><div id="bar33"></div></li>
+				</ul>
+			</div>
+		</div>
+	<div class="header">
+			<div class="container">
+			<div class="helloworld">
+				<h1>HELLO WORLD!</h1>
+				<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</h5>
+				<div class="bgimg">
+			    </div>
+			    <div id="bar"></div>
+				<button id="clickme">Click Me</button>	
+			</div>
+		</div>
+	</div>
+
+	<div class="middle">
+		<div class="container">
+			<div id="main">
+				<div id="courses">
+					<div id="course1">
+						<h3>HTML</h3>
+					</div>
+					<div id="course2">
+						<h3>CSS</h3>
+					</div>
+					<div id="course3">
+						<h3>JS</h3>
+					</div>
+					<div class="coursedetails">
+					<div class="courseimg">
+					<div id="htmlcourse"> 
+						<h1>HELLO HTML!</h1>
+						<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </h5>
+					</div>
+					
+					<div id="csscourse"> 
+						<h1>HELLO CSS</h1>
+						<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</h5>
+					</div>
+					<div id="jscourse"> 
+						<h1>HELLO JS</h1>
+						<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</h5>
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="footer"> 
+		<div class="container">
+			<div class="hello">
+				<h1>HELLO WORLD!</h1>
+				<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</h5>
+				<div id="bar2"></div>
+				<button id="backtotop">Back To Top</button>
+				<div id="bgimg2">
+					
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<script type='text/javascript'>
+$('#backtotop').on('click', function(e){
+    $("html, body").animate({scrollTop: $("#navbar").offset().top}, 1000);
+   
+});
+</script>
+</body>
+</html>
