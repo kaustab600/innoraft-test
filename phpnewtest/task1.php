@@ -30,7 +30,29 @@
                "class" => 9,
                "mark" => array("hindi"=>90,"english"=>70,"maths"=>60)	
                
+            ),
+
+            "S5" => array (
+               "name" => "ramesh",
+               "class" => 9,
+               "mark" => array("hindi"=>30,"english"=>60,"maths"=>60)	
+               
+            ),
+
+            "S6" => array (
+               "name" => "akash",
+               "class" => 9,
+               "mark" => array("hindi"=>20,"english"=>20,"maths"=>20)	
+               
+            ),
+
+            "S7" => array (
+               "name" => "bipasha",
+               "class" => 10,
+               "mark" => array("hindi"=>40,"english"=>50,"maths"=>50)	
+               
             )
+            
          );
 ?>
 <!DOCTYPE html>
@@ -48,14 +70,14 @@
 			<th>Total marks</th>
 		</tr>
 		<?php
-			function date_compare($element1, $element2) { 
+			function marks_compare($element1, $element2) { 
     $item1 = $element1['class']; 
     $item2 = $element2['class']; 
     return $item1 - $item2; 
 }  
   
 // Sort the array  
-usort($marks, 'date_compare'); 
+usort($marks, 'marks_compare'); 
   
 // Print the array 
 //print_r($marks); 
