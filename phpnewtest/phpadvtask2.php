@@ -12,30 +12,63 @@ echo $obj['jsonapi']['version'] ;
   print_r($obj);
 //echo $obj;*/
 ?>-->
-
-<?php
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<?php
  
 require '../vendor/autoload.php';
  
-//use GuzzleHttp\Client;
 
 
- 
-/*$client = new Client([
-    'base_uri' => 'http://www.google.com',
-]);
- 
-$response = $client->request('GET', 'search', [
-    'query' => ['q' => 'curl']
-]);
- 
-echo $response->getBody();
-*/
+class header
+{
+	function datafetch(&$client,&$response,&$json)
+	{
+		echo "<div class ='main'>";
+		echo "<div class='container'>";
 
+	
 
+		$i=0;//used for classes in css
+	foreach($json->data as $key => $value)
+	{	
+	
+  	
+  	echo "<div id=box".$i.">";
+  	echo "<div class='image'>";
+  	$imgurl= $value->relationships->field_image->links->related->href;
+   	$imgdata=$client->request('GET',$imgurl );
+   	$imgdetails = json_decode($imgdata->getBody());
+   	$imgsrc= "https://ir-revamp-dev.innoraft-sites.com".$imgdetails->data->attributes->uri->url;
+   	echo "<img src=".$imgsrc." >";
+   	echo "</div>";
+  	$topic = $value->attributes->title;
+    $body = $value->attributes->body->value;
+    $content = $value->attributes->body->summary;
+	$points = $value->attributes->field_services->value;
 
+		$index = $i+1;
+		echo "<div class='texts'>";
+	 	echo "<span>".$index."</span><h3>".$topic."</h3>";
+		echo "<h5>".$content."</h5>";
+		
+		echo "<h5>".$points."</h5>";
+    	echo "</div>";
+    	echo "</div>";
+        $i++;
+	 
+	}
 
-//$url ='https://ir-revamp-dev.innoraft-sites.com/jsonapi/node/services ';
+	echo "</div>";
+	echo "</div>";
+	}
+}
+
 $client = new GuzzleHttp\Client(['base_uri' => 'https://ir-revamp-dev.innoraft-sites.com/jsonapi/node/']);
 // Send a request to https://foo.com/api/test
 $response = $client->request('GET', 'services');
@@ -43,53 +76,12 @@ $response = $client->request('GET', 'services');
 //$response = $client->request('GET', $url);
 $json = json_decode($response->getBody());
 
-for($i=0;$i<7;$i++)
-{
-  if($i > 5)
-  {
-
-  	$imgurl= $json->data[$i]->relationships->field_image->links->related->href;
-   	$imgdata=$client->request('GET',$imgurl );
-   	$imgdetails = json_decode($imgdata->getBody());
-   	$imgsrc= "https://ir-revamp-dev.innoraft-sites.com".$imgdetails->data->attributes->uri->url;
-   	echo "<img src=".$imgsrc." width='200px'>";
-  	$topic = $json->data[$i]->attributes->title;
-    $body = $json->data[$i]->attributes->body->value;
-   //$content = $json->data[$i]->attributes->body->summary;
-    echo "<h3>".$index.") ".$topic."</h3><br>";
-	echo "<h4>".$body."</h4>";
-   	
-
-  }
-  else
-  {
-  	
-  	
-  	$imgurl= $json->data[$i]->relationships->field_image->links->related->href;
-   	$imgdata=$client->request('GET',$imgurl );
-   	$imgdetails = json_decode($imgdata->getBody());
-   	$imgsrc= "https://ir-revamp-dev.innoraft-sites.com".$imgdetails->data->attributes->uri->url;
-   	echo "<img src=".$imgsrc." width='200px' style='float:left;'>";
-  	$topic = $json->data[$i]->attributes->title;
-	$body = $json->data[$i]->attributes->body->value;
-	$content = $json->data[$i]->attributes->body->summary;
-	$points = $json->data[$i]->attributes->field_services->value;
-
-	$index = $i+1;
-
-	echo "<h3>".$index.") ".$topic."</h3><br>";
-	echo "<h4>".$content."</h4>";
-
-	echo "<h4>".$points."</h4><br><br>";
-    
-  }
- 
-//print_r($json);
-//print_r($json['data']->['attributes']);
-}
-
-
+$object = new header();
+$object->datafetch($client,$response,$json);
 
 
 ?>
+</body>
+</html>
+
 
