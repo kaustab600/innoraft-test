@@ -23,17 +23,21 @@ echo $obj['jsonapi']['version'] ;
  
 require '../vendor/autoload.php';
  
+$client = new GuzzleHttp\Client(['base_uri' => 'https://ir-revamp-dev.innoraft-sites.com/jsonapi/node/']);
 
+$response = $client->request('GET', 'services');
+
+$json = json_decode($response->getBody());
 
 class header
 {
-	function datafetch(&$client,&$response,&$json)
+   function __construct(&$client,&$response,&$json)
 	{
 		echo "<div class ='main'>";
 		echo "<div class='container'>";
 
 	
-
+                
 		$i=0;//used for classes in css
 	foreach($json->data as $key => $value)
 	{	
@@ -69,15 +73,10 @@ class header
 	}
 }
 
-$client = new GuzzleHttp\Client(['base_uri' => 'https://ir-revamp-dev.innoraft-sites.com/jsonapi/node/']);
-// Send a request to https://foo.com/api/test
-$response = $client->request('GET', 'services');
-//$client = new Client();
-//$response = $client->request('GET', $url);
-$json = json_decode($response->getBody());
 
-$object = new header();
-$object->datafetch($client,$response,$json);
+
+$object = new header($client,$response,$json);
+
 
 
 ?>
