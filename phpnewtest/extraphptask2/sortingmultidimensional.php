@@ -34,6 +34,7 @@ function check_diff_multi($array1, $array2){
             $tmp = check_diff_multi($val, $array2[$key]);
             if($tmp) {
                 $result[$key] = $tmp;
+                echo "key in tmp = ".$key." ".$result[$key]."<br>";
             }
         }
         elseif(!isset($array2[$key])) {
@@ -41,9 +42,11 @@ function check_diff_multi($array1, $array2){
         }
         elseif($val !== $array2[$key]) {
             $result[$key] = $array2[$key];
+            echo "key in elseif= ".$key." ".$result[$key]."<br>";
         }
 
         if(isset($array2[$key])) {
+            echo "key ".$array2[$key]."<br>";
             unset($array2[$key]);
         }
     }
@@ -56,11 +59,7 @@ function check_diff_multi($array1, $array2){
 
 $array2 = array("a" => "green", "b" => "brown", "100" => array("1"=>"red","orange"), "yellow");
 $array1 = array("a" => "green","100"=>array("1"=>"red","violet"), "yellow","four");
-//$result = array_diff_uassoc($array1, $array2, "key_compare_func");//it compares both key and values w.r.t array1
 
-//$result = multidimentional_array($array1, $array2);//...it compares only values not keys w.r.t array1
-
-//$result = array_diff_ukey($array1, $array2,"key_compare_func");....//it compares only keys
 var_dump(check_diff_multi($array1, $array2)); 
 //print_r($result);
 ?>
