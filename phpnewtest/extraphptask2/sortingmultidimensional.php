@@ -34,7 +34,7 @@ function check_diff_multi($array1, $array2){
             $tmp = check_diff_multi($val, $array2[$key]);
             if($tmp) {
                 $result[$key] = $tmp;
-                echo "key in tmp = ".$key." ".$result[$key]."<br>";
+                //echo "key in tmp = ".$key." ".$result[$key]."<br>";
             }
         }
         elseif(!isset($array2[$key])) {
@@ -42,11 +42,11 @@ function check_diff_multi($array1, $array2){
         }
         elseif($val !== $array2[$key]) {
             $result[$key] = $array2[$key];
-            echo "key in elseif= ".$key." ".$result[$key]."<br>";
+            //echo "key in elseif= ".$key." ".$result[$key]."<br>";
         }
 
         if(isset($array2[$key])) {
-            echo "key ".$array2[$key]."<br>";
+            //echo "key ".$array2[$key]."<br>";
             unset($array2[$key]);
         }
     }

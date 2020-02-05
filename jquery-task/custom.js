@@ -36,15 +36,7 @@ $(".section9 button").click(function(){
 	$(this).prop('disabled', "true");
 });
 
-$(".section6 button").click(function(){
 
-if( $( ".section6 p" ).attr("class","intro") )
-{
-
- $( ".section6 p" ).css("background-color","transparent");
-}
-
-});
 
 $(".section7 button").click(function(){
 	$(".section7 li:nth-of-type(4) ,.section7 li:nth-of-type(5),.section7 li:nth-of-type(6) ").css("background-color","red");
@@ -63,17 +55,18 @@ $(".section4 button:first-of-type").click(function(){
 });
 
 $(".section6 button").click(function(){
-  
-  //$(".section6 p").not(".intro").css({"background-color":"transparent"});
+  $(".section6 p:not(.intro)").css({"background-color":"transparent"});//Q5 remove background color from p tage which one don't have any class
+ 
     
     
-    $(".section6 p").each(function() {       
+    /*$(".section6 p").each(function() {       
       
+
       if($(this).hasClass("intro") == false)
       {
         $(this).css("background-color","transparent");
       }       
-    });  
+    }); */ 
 
       //$(" p:not(.intro)").css("background-color","transparent");
 
