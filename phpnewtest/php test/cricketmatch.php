@@ -1,50 +1,6 @@
 <?php
 	
-class team{
-
-	$teamname;
-	function setteamname($name){
-		$this->teamname = $name;
-	}
-
-	function playerlist(){
-		
-	}
-
-	 
-}
-
-
-
-class players{
-	$playername;
-	$indscore ;
-	function setplayername($plname,$score){
-		$playername = $plname;
-		$indscore = $score;
-	}
-
-
-}
-
-
-
-class worldcup{
-
-	private $tournament = array(
-
-	'match1' => array($teamA,$teamB),
-	'match2' => array($teamA,$teamC),
-	'match3' => array($teamA,$teamD),
-	'match4' => array($teamB,$teamC),
-	'match5' => array($teamB,$teamD),
-	'match6' => array($teamC,$teamD)
-
-	);
-
-}
-
-class ipl
+	class ipl
 	{
 
 		//public $x = 10;
