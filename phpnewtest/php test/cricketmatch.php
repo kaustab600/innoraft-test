@@ -1,12 +1,7 @@
 <?php
-	
-	class ipl
-	{
+	 $tournament = array(
 
-		//public $x = 10;
-	 private $tournament = array(
-
-	'match1' => array('A' => array('A1' => 50, 'A2'=>30,'A3'=>40,'A4'=>20), 'B' => array('B1' => 20, 'B2'=>70,'B3'=>30,'B4'=>30)),
+	'match1' => array('A' => array('A1' => 5000, 'A2'=>30,'A3'=>40,'A4'=>20), 'B' => array('B1' => 20, 'B2'=>70,'B3'=>30,'B4'=>30)),
 
 	'match2' => array('A' => array('A1' => 30, 'A2'=>10,'A3'=>50,'A4'=>30), 'C' => array('C1' => 10, 'C2'=>30,'C3'=>40,'C4'=>20)),
 
@@ -20,38 +15,13 @@
 	'match6' => array('C' => array('C1' => 20, 'C2'=>20,'C3'=>50,'C4'=>30), 'D' => array('D1' => 40, 'D2'=>10,'D3'=>30,'D4'=>10))
 	);
 
-	//return $tournament;
-	public function senddata(){
-		return $this->tournament;
-		//echo "hello";
-	}
-
-}
-
-$obj1 = new ipl;
+	
 
 
 
-//$var = array();
-$var = $obj1->senddata();
-
- //print_r($var);
 
 
-class fetchdata{
-
-		function a(array $match){
-			print_r($match);
-		}
-		
-	}
-
-	$obj2 = new fetchdata;
-
-	$obj2->a($var);
-
-
-/*	$playersrun = array();
+	/*$playersrun = array();
 
 	foreach($tournament as $match => $team)
 	{
@@ -99,7 +69,7 @@ class fetchdata{
 		{
 			echo "<br>".$player;
 		}
-	}
+	}*/
 
 $teamscorces = array();
 
@@ -116,10 +86,21 @@ echo "<br>Tournament winner team.<br>";
 
 
 $maxscore = array();//...to store total score for each match
+$per_match_winner = array();
+$tournamentwinner = array(
 
+  "A"=>0,
+  "B"=>0,
+  "C"=>0,
+  "D"=>0
+
+);
+
+	$i=0;
 	foreach($tournament as $match => $team)
 	{	
 		$scoreofthematch=0;
+		$matchwinner = 0;
 		foreach($team as $player => $runs)
 		{
 			$total=0;
@@ -127,37 +108,44 @@ $maxscore = array();//...to store total score for each match
 			foreach($runs as $indrun => $value)
 			{
 				//A=140
+				
 				$total = $total + $value;
-				//echo $indrun." ".$total."<br>";
+				
 				//B=100
+			}
+			if($matchwinner<$total)
+			{
+
+			   $matchwinner = $total;
+			   $per_match_winner[$i] = $player;
+        
+         //echo $player."<br>";
+			   
+			}
+			elseif ($matchwinner == $total) {
+				$matchwinner =0;
 			}
 
 			//echo $player." ".$total."<br>";
-			$scoreofthematch = $scoreofthematch+$total;
+			
 
 		}
-			echo $match." = ".$scoreofthematch."<br>";
-			$maxscore[$match] = $scoreofthematch;
-
-		//$maxscore[$match]=$total;
-
+$tournamentwinner[$per_match_winner[$i]]+=1;
+		//echo $matchwinner."<br>";
+		$i++;
 	}
-print_r($maxscore);
-	$highestscore = 0;
-
-	foreach($maxscore as $match => $total)
-	{
-		if($total > $highestscore)
-		{
-			$highestscore = $total;
-		}
-	}
-
-	echo $highestscore."<br>";
+//print_r($maxscore);
+print_r($per_match_winner);
+print_r($tournamentwinner);
 
 
 
-*/
+
+
+
+
+
+
 
 ?>
 
