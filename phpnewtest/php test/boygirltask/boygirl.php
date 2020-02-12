@@ -54,8 +54,9 @@ class arrangement{
  		
  	}
  }
-
+ 		echo "<pre>";
  		print_r($this->arr);
+ 		echo "<pre>";
 	}
 }
 
@@ -85,6 +86,7 @@ $stud7 = new students('saikat','M');
 $stud8 = new students('akash','M');
 $stud9 = new students('rituporno','M');
 $stud10 = new students('tanal','M');
+
 
 
 $array = array($stud1->getdetails(),$stud2->getdetails(),$stud3->getdetails(),$stud4->getdetails(),$stud5->getdetails(),$stud6->getdetails(),$stud7->getdetails(),$stud8->getdetails(),$stud9->getdetails(),$stud10->getdetails());
