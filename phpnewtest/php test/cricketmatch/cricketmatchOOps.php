@@ -172,7 +172,7 @@ echo "<br>Tournament winner team.<br>";
 	}
 
 
-$maxscore = array();//...to store total score for each match
+$maxscore = [];//...to store total score for each match
 
 	foreach($this->tournament as $match => $team)
 	{	

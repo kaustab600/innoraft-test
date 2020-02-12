@@ -1,5 +1,5 @@
 <?php
-	 $tournament = array(
+	 $tmptournament = array(
 
 	'match1' => array('A' => array('A1' => 5000, 'A2'=>30,'A3'=>40,'A4'=>20), 'B' => array('B1' => 20, 'B2'=>70,'B3'=>30,'B4'=>30)),
 
@@ -71,7 +71,7 @@
 		}
 	}*/
 
-$teamscorces = array();
+$teamscorces = [];
 
 echo "<br>Tournament winner team.<br>";
 
@@ -85,8 +85,8 @@ echo "<br>Tournament winner team.<br>";
 	}
 
 
-$maxscore = array();//...to store total score for each match
-$per_match_winner = array();
+$maxscore = [];//...to store total score for each match
+$per_match_winner = [];
 $tournamentwinner = array(
 
   "A"=>0,
