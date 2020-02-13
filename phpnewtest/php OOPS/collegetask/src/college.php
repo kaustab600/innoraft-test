@@ -1,6 +1,6 @@
 <?php
 
-//set every college as object
+namespace collegedetails;
 class college{
     public $college;
 

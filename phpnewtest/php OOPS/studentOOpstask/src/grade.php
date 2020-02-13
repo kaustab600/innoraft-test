@@ -1,5 +1,7 @@
 <?php
 
+namespace studentclasses;
+
 class grade{
   public $grad;
   public $scores = [];
@@ -7,7 +9,7 @@ class grade{
   function __construct($Grade,$arr){
       $this->grad=$Grade;
       $this->scores=$arr; 
-  }
+    }
 }
 
 ?>

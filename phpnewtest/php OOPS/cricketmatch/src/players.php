@@ -1,7 +1,8 @@
 <?php
+namespace cricketdetails;
 
-class players
-{
+class players{
+    
     public $matchid;
     public $runs;
     public $team;

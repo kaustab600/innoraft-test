@@ -1,4 +1,7 @@
 <?php
+
+namespace studentclasses;
+
 class marks{
 
   public $sid;

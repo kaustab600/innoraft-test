@@ -1,10 +1,12 @@
 <?php
-include('data.php');
-include('students.php');
+
+require './vendor/autoload.php';
+use studentdetails\students;
+require 'data.php';
 
 //creating array of objects of the students
-foreach($tmpstudents as $key => $value)
-{
+foreach($tmpstudents as $key => $value){
+
     $student[]= new students($value['name'],$value['gender']);
 }   
 
@@ -21,40 +23,43 @@ echo "</pre>";
         $len = count($this->arr);//
         //echo $len."<br>";
         
-        $flag = 0 ;// to indicate there is a second female.
-        $status = 0; // To indicate wheather any zeros are placed or not.
+        // to indicate there is a second female.
+        $flag = 0 ;
+        // To indicate wheather any zeros are placed or not.
+        $status = 0; 
 
         
- //loop for selecting the second female and putting Zero at the place
- foreach($this->arr as $student => $details){
-    foreach($details as $key => $value)
-    {
+        //loop for selecting the second female and putting Zero at the place
+    foreach($this->arr as $student => $details){
+
+        foreach($details as $key => $value){
       //echo $value['gender'];
       
-      if(($student+1)<=($len-1))
-      {
+          if(($student+1)<=($len-1)){
 
 
-      if($value['gender'] == "F" && $flag == 0){
+            if($value['gender'] == "F" && $flag == 0){
 
-        if($this->arr[$student+1]->details['gender'] == "F"){
+              if($this->arr[$student+1]->details['gender'] == "F"){
           
-         $flag =1;
-        }
-      }
-      elseif($value['gender'] == "F" && $flag == 1){
+                  $flag =1;
+                }
+            }
+            elseif($value['gender'] == "F" && $flag == 1){
         
-        $this->arr[$student]->details['gender'] = "0";
-        //echo "flaged at".$student."<br>";
-        $flag = 0;
-        $status =1;
-        $index = $student;  // index stores the current position of the second female
-        break;
-      }
-     }
+              $this->arr[$student]->details['gender'] = "0";
+              //echo "flaged at".$student."<br>";
+              $flag = 0;
+
+              $status =1;
+
+              // index stores the current position of the second female
+              $index = $student;  
+              break;
+            }
+          }
+        }
     }
-   
- }
 
  
  echo "<h1>Array initially</h1><br><br>";
@@ -63,18 +68,19 @@ echo "</pre>";
  echo "</pre>";
 
  //looping through the array to find a place where three males are present simultanuosly
-$done =0;// when swapping is done set done true
+ $done =0;// when swapping is done set done true
  foreach($this->arr as $student => $detail){
-    foreach($detail as $key => $value)
-    {
+
+    foreach($detail as $key => $value){
+
       if($value['gender']=="M"){
-        if($status == 1)
-        {
+
+        if($status == 1){
+
           if(($student-1)<0){
 
           }
-          elseif($student+1 >($len-1))
-          {
+          elseif($student+1 >($len-1)){
 
           }
           elseif($this->arr[$student-1]->details['gender']=="M" && $this->arr[$student+1]->details['gender']=="M" && $done == 0){
@@ -97,6 +103,7 @@ $done =0;// when swapping is done set done true
           echo "<pre>";
           print_r($this->arr);
           echo "</pre>";
+          
   }// ending of function sortfemales()
 }//ending of class arrangement
 

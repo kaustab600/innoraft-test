@@ -3,8 +3,7 @@
 class player{
 
 	private $pname;
-	function __construct( $par1 )  
-    { 
+	function __construct( $par1 ){ 
         $this->pname = $par1; 
         
     } 

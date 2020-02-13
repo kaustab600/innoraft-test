@@ -1,4 +1,7 @@
 <?php
+
+namespace studentclasses;
+
 class subject{
   public $name;
   public $subjectcode;
@@ -10,7 +13,6 @@ class subject{
     $this->subjectcode=$ssubjectcode;
     $this->mm=$smm;
   }
-
-  }
+}
   
-  ?>
+?>

@@ -1,4 +1,7 @@
 <?php
+
+namespace studentclasses;
+
 class students{
     public $sid;
     public $sname;
@@ -16,4 +19,5 @@ class students{
     }
     
 }
+
 ?>

@@ -1,15 +1,15 @@
 <?php
-	
-class matches
- {
+
+namespace cricketdetails;	
+
+class matches{
     //public $matchid;
     public $teamstats=[];
 
-    function __construct($arr)
-    {
+    function __construct($arr){
         $this->teamstats = $arr;
     }
 
-  }
+}
 
 ?>

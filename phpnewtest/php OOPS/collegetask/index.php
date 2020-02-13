@@ -1,19 +1,18 @@
 <?php
 
 include('data.php');
-include('college.php');
-include('documentslist.php');
-include('merger.php');
+require './vendor/autoload.php';
+use collegedetails\college;
+use collegedetails\documentslist;
+use collegedetails\merger;
 
 // -------------------creating college objects---------------------------------
-foreach($tmpcollege as $key => $value)
-{
+foreach($tmpcollege as $key => $value){
   $colleges[] =  new college($value);
 }
 
 //----------------------creating document objects----------------------------
-foreach($tmpdocuments as $key => $value)
-{
+foreach($tmpdocuments as $key => $value){
   
   $document[] = new documentslist($value['doc_name'],$value['doc_type'],$value['doc_college'],$value['doc_sent']);
 }
@@ -27,10 +26,13 @@ $newarray = $obj1->mergearray($colleges ,$document);
 //----------------------------------------------------------------------------------------------------------//
 class collegeDocdetails{
 
-    function display($array,$college){//.......function to display the college + document detail in tabular form
+    //function to display the college + document detail in tabular form
+    function display($array,$college){
+
         echo "<table cellspacing='0px' cellpadding='10px' border='1px solid black'>";
         echo "<tr><th>College Name</th><th>Document name</th><th>Type</th><th>Status</th></tr>";
-    foreach($college as $name => $val){
+      foreach($college as $name => $val){
+
         echo "<tr><td>";
         
         $cname = $val->college;
@@ -65,7 +67,6 @@ class collegeDocdetails{
     }
 
     }
-
 
 }
 
