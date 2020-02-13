@@ -1,6 +1,7 @@
 <?php
 
 namespace collegedetails;
+
 class college{
     public $college;
 

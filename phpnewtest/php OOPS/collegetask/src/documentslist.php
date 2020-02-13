@@ -1,6 +1,7 @@
 <?php
 	
     namespace collegedetails;
+    
 	class documentslist{
     
     public $doc_name;
