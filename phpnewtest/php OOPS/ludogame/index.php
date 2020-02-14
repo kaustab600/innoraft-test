@@ -42,7 +42,7 @@ function getwinner($index,$arr){
 							$zubin_turn = 1;
 
 							if(empty($zubin)){
-								echo "zubin wins at ".($i+1)."<br>";
+								echo "zubin wins at turn no ".($i+1)."<br>";
 								return "zubin";
 								$i = $len-1;
 							}
@@ -79,7 +79,7 @@ function getwinner($index,$arr){
 			$zubin_turn = 1;
 			//echo "yogita turn ".$i."<br>";
 			if($arr[$i] == $yogita['b']){
-				echo "yogita wins at".($i+1)."<br>";
+				echo "yogita wins at turn no ".($i+1)."<br>";
 				return "yogita";
 				$i = $len-1;
 			}
@@ -95,7 +95,7 @@ $yogita_wins = 0;
 $total =0;
 foreach($game as $key => $value){
 	$total++;
-	echo "<br>";
+	
 	$winner = getwinner($key,$value);
 	if($winner == "zubin"){
 		$zubin_wins++;
@@ -103,8 +103,8 @@ foreach($game as $key => $value){
 	else{
 		$yogita_wins++;
 	}
-	echo "<br>";
+	
 }
 
 $probability = ($yogita_wins/$total)*100;
-echo "<br>".$probability."%";
+echo "<br> probability of yogita winning ".$probability."%";
