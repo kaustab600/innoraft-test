@@ -1,7 +1,14 @@
 <?php
 
-include('ludu_data.php');
+//include('ludu_data.php');
 
+require './vendor/autoload.php';
+ 
+$client = new GuzzleHttp\Client(['base_uri' => 'http://learning.architbohra.com/']);
+
+$response = $client->request('GET', 'ludo_json.php');
+
+$game = json_decode($response->getBody(),true);
 
 function getwinner($index,$arr){
 
