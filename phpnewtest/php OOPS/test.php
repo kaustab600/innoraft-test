@@ -1,6 +1,9 @@
 <?php
 	
-	$date  = "4thfeb";
+	$array = array();
 
-	echo str_replace(['/D'], '', filter_var($date, FILTER_SANITIZE_NUMBER_INT));
+	if(empty($array))
+	{
+		echo "empty";
+	}
 ?>

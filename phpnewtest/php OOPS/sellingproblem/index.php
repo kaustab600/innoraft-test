@@ -18,6 +18,7 @@
 		}
 	}
 
+	//creating objects of products
 	foreach($array as $key => $value){
 
 		$ob[]= new products($value['pd'],$value['sp'],$value['sd'],$value['ct']);
@@ -27,7 +28,8 @@
 	//print_r($ob);
 	echo "</pre>";
 
-	//asort($ob)
+	
+	//applying multisort to sort the ob[] w.r.t pid
 
 	$price = [];
 
@@ -37,53 +39,12 @@
     		
     }
 
-	//$price = array_column($ob, 'pd');
-	//print_r($price);
-
     array_multisort($ob, SORT_ASC , $price);
     echo "<pre>";
     //print_r($ob);
     echo "</pre>";
 
-    $flag=0;
-    $pid_diff = 0;
-    function addproductid(&$arr,$index){
-    	//return str_replace(['pd'], 'p', filter_var($arr[$index]->pid, FILTER_SANITIZE_STRING));
-    	global $flag;
-    	global $pid_diff;
-    	echo $index."<br>";
-    	//if pid and ct are both same then put current ct = p1
-
-    	if( ($arr[$index]->pid == $arr[$index+1]->pid) && ($arr[$index]->ct == $arr[$index+1]->ct) ){
-    		$arr[$index]->ct = $arr[$index]->ct."-p1";
-    		$flag =1;
-    	}
-
-    	elseif($flag == 1){
-    		
-    		if( ($arr[$index]->pid != $arr[$index+1]->pid) && ($arr[$index]->ct == $arr[$index+1]->ct)){
-    			$pid_diff = 1;
-    		}
-
-    		$arr[$index]->ct = $arr[$index]->ct."-p1";
-    		$flag =0;
-    	}
-    	elseif($pid_diff == 1){
-    		$arr[$index]->ct = $arr[$index]->ct."-p2";
-    	}
-    	//if pid are different  ct are same the put current ct = p2
-    	elseif( ($arr[$index]->pid != $arr[$index+1]->pid) && ($arr[$index]->ct == $arr[$index+1]->ct) ){
-    		//$arr[$index]->ct = $arr[$index]->ct."-p2";
-    		$pid_diff = 1;
-    	}
-    	
-    	//if pid and ct are both different
-    	elseif( ($arr[$index]->pid != $arr[$index+1]->pid) && ($arr[$index]->ct != $arr[$index+1]->ct) ){
-    		//$arr[$index]->ct = $arr[$index]->ct."-p2";
-    	}
-
-    }
-
+    //insertionsorting() the same pids from start to end 
     function insertionSort(&$arr,$start,$end){
 
     	for($k=$start;$k<$end;$k++){
@@ -104,6 +65,7 @@
 
     }
 
+    //
     $len = count($ob);
 
     for($i=0 ; $i<$len-1 ;$i++){
@@ -122,16 +84,16 @@
     		}
     	}
 
-    	//echo "start =".$start." , end =".$end."<br><br>";
     	if($start < $end){
     		insertionSort($ob,$start,$end);
     	}
     }
-    echo "<pre>";
-   // print_r($ob);
-    echo "</pre>";
+   
     
-    $i = 0;
+    //$i = 0;
+
+    //adding ob->sp of same pid's
+
    for($i=1;$i<=$len-1;$i++){
 
     	if($ob[$i-1]->pid == $ob[$i]->pid){
@@ -140,12 +102,37 @@
     	}
     }
 
-    
+    // after adding the sp the array
+     echo "<pre>";
+     //print_r($ob);
+     echo "</pre>";
 
-    for($i=0 ;$i<$len-1;$i++){
+    //adding ct
+    $counter=array("c1"=>0,"c2"=>0);
 
-    	 addproductid($ob,$i);
+    $lastvisited =  array("c1"=>"","c2"=>"");
 
+    //using this loop to add the p1 or p2 with ct
+    for($i=0 ;$i<$len;$i++){
+
+    	$currentCT = $ob[$i]->ct;
+    	if($counter[$currentCT] == 0){
+    		$counter[$currentCT]++;
+    		$lastvisited[$currentCT] = $ob[$i]->pid;
+    		$ob[$i]->ct = $ob[$i]->ct."-p".$counter[$currentCT];
+    	}
+    	else{
+
+    		if( $ob[$i]->pid == $lastvisited[$currentCT]){
+    			$ob[$i]->ct = $ob[$i]->ct."-p".$counter[$currentCT];
+    		}
+    		elseif( $ob[$i]->pid != $lastvisited[$currentCT] ){
+
+    			$counter[$currentCT]++;
+    			$lastvisited[$currentCT] = $ob[$i]->pid;
+    			$ob[$i]->ct = $ob[$i]->ct."-p".$counter[$currentCT];
+    		}
+    	}
     }	
 
     echo "<pre>";
