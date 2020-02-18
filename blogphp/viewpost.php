@@ -2,9 +2,11 @@
 
 require('connection.php');
 
-if($_GET['pid'])
-{
+if(isset($_GET['pid'])){
 	$postid = $_GET['pid'];
+}
+elseif(!isset($_GET['pid'])){
+	header('Location:Loginpage.php');
 }
 
 $q1 = "select u.user_name , u.user_image, p.post_title , p.post_date , p.upload_image ,p.post_content from posts p inner join users u on p.user_id =u.user_id where p.post_id =".$postid;
@@ -18,7 +20,7 @@ if($contents)
 		<html>
 		<head>
 			<title>View Post</title>
-			<link rel="stylesheet" type="text/css" href="./styles/styleview_post.css">
+			<link rel="stylesheet" type="text/css" href="./styles/styleview_post.css?v=1">
 		</head>
 		<body>
 		<div id="header">

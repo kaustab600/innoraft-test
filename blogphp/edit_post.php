@@ -9,6 +9,9 @@
 
 		<?php 
 		session_start();
+		if(!isset($_SESSION['uid'])){
+			header('Location:Loginpage.php');
+		}
 		$userid = $_SESSION['uid'];
 		$q = "select * from users where user_id = '".$userid."'";
 		$user_details  = mysqli_query($conn,$q);
@@ -64,7 +67,7 @@
 					//$_SESSION['pid'] = $rowno['post_id'];
 					echo "<a id='viewpost' href='edit.php?pid=".$rowno['post_id']."'>Edit</a>";
 					//echo "<a id='viewpost' href='delete.php?pid=".$rowno['post_id']."'>delete</a>";
-					echo "<a onClick=\"javascript: return confirm('Please confirm deletion');\" href='deletepost.php?id=".$rowno['post_id']."'>Delete</a>";
+					echo "<a id='viewpost' onClick=\"javascript: return confirm('Please confirm deletion');\" href='deletepost.php?pid=".$rowno['post_id']."'>Delete</a>";
 					echo "</div>";
 				}
 

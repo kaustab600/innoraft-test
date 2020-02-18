@@ -3,6 +3,9 @@
 require('connection.php');
 
 		session_start();
+		if(!isset($_SESSION['uid'])){
+			header('Location:Loginpage.php');
+		}
 		$userid = $_SESSION['uid'];
 		$q = "select * from users where user_id = '".$userid."'";
 		$user_details = mysqli_query($conn,$q);

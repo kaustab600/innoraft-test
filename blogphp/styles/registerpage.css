@@ -86,7 +86,7 @@
 }
 
 #signin:hover{
-	box-shadow: 3px 3px grey;
+	box-shadow: 8px 8px 8px grey;
 }
 
 #signin h2{
@@ -114,11 +114,16 @@
 #signin input[type="radio"]{
 	
 	margin:10px 10px;
-	transform: translateX(5%);
+}
+
+#radiobutton{
+	margin-left:30%;
+	margin-bottom: 15px;
+
 }
 
 #signin input[type = "submit"]{
-	margin-left: 35%;
+	margin-left: 40%;
 	color: purple;
 	font-weight: 800;
 	border:1px solid purple;
@@ -128,6 +133,10 @@
 
 #signin input[type = "submit"]:hover{
 	box-shadow: 2px 2px 3px black;
+}
+
+#signin input[type = "file"]{
+	margin-left: 30%;
 }
 
 #signin h4{

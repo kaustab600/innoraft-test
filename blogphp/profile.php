@@ -4,6 +4,9 @@ require('connection.php');
 
 		session_start();
 		$userid = $_SESSION['uid'];
+		if(!isset($_SESSION['uid'])){
+			header('Location:Loginpage.php');
+		}
 		$q = "select * from users where user_id = '".$userid."'";
 		$user_details = mysqli_query($conn,$q);
 		if(mysqli_num_rows($user_details) == 1){
@@ -14,7 +17,7 @@ require('connection.php');
 <html>
 <head>
 	<title>Profile</title>
-	<link rel="stylesheet" type="text/css" href="./styles/styleprofile.css">
+	<link rel="stylesheet" type="text/css" href="./styles/styleprofile.css?v=1">
 </head>
 <body>
 		<div id="header">

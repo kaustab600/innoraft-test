@@ -9,6 +9,9 @@
 
 		<?php 
 		session_start();
+		if(!isset($_SESSION['uid'])){
+			header('Location:Loginpage.php');
+		}
 		$userid = $_SESSION['uid'];
 		$q = "select * from users where user_id = '".$userid."'";
 		$user_details  = mysqli_query($conn,$q);
@@ -37,7 +40,7 @@
 	<div id="main">
 		<div class="container">
 			<?php 
-				if($_GET['pid']){
+				if(isset($_GET['pid'])){
 					$postid = $_GET['pid'];
 				}
 
@@ -97,7 +100,8 @@
 
 					$update_content = mysqli_query($conn,$q2);
 					if($update_content){
-						echo "sucessfully updated";
+						//echo "sucessfully updated";
+						header('Location:edit_post.php');
 					}
 					else{
 						echo "not updated";

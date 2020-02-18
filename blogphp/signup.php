@@ -11,7 +11,7 @@
 		$pass = $_POST['pass'];
 		$crmp = $_POST['crfmpass'];
 		$country = $_POST['country'];
-		$gender = $_POST['gender'];
+		$gen = $_POST['gender'];
 		
 		$file_name = $_FILES['profilepic']['name'];
 		$file_size =$_FILES['profilepic']['size'];
@@ -38,7 +38,7 @@
          	}
          	
 
-      		$q = "insert into users(f_name, l_name, user_name, describe_user, user_pass, user_email, user_country, user_gender, user_image, user_reg_date,posts) values( '".$fname."','".$lname."','".$username."','".$status."','".$pass."','".$mail."','".$country."','".$gender."','".$img."',now(),'no')";
+      		$q = "insert into users(f_name, l_name, user_name, describe_user, user_pass, user_email, user_country, user_gender, user_image, user_reg_date,posts) values( '".$fname."','".$lname."','".$username."','".$status."','".$pass."','".$mail."','".$country."','".$gen."','".$img."',now(),'no')";
 
       		$insertuser = mysqli_query($conn,$q);
       		
