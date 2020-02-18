@@ -5,22 +5,21 @@
 <link rel="stylesheet" href="style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!--<script src="custom.js"></script>-->
-<script src="javascriptfunctions.js"></script>
 </head>
 <body>
 
 <div class="block section1">
   <h2>Increase white element height 300px onclick button</h2>
-  <div class="height"></div>
-  <button>click</button>
+  <div class="height" id="box1"></div>
+  <button id="btn1">click</button>
 </div>
 <div class="block section2">
   <h2>Move white element to right 400px with smooth movement on button click</h2>
-  <div class="height"></div>
-  <button id="btn1">click</button>
+  <div class="height" id="box2"></div>
+  <button id="btn2">click</button>
 </div>
 <div class="block section3">
-  <div class="full">
+  <div class="full" id="scrollsection">
     <h2>After scroll 700px from top this section need to be fixed at top and after 900px it will return his actual position</h2>
   </div>
 
@@ -29,16 +28,16 @@
 <div class="block section5">
   <h2>On button click Wrap second paragraph with a div </h2>
   <p> para 1</p>
-  <p>para 2</p>
+  <p id="wrapelement">para 2</p>
   <p>para 3</p>
-  <button>Click Me..</button>
+  <button id="btn3">Click Me..</button>
 </div>
 <div class="block section9">
   <h2> on button click change input field value and disable the button</h2>
   <input type="text" id="test3" value="test value">
-  <button>Click Me..</button>
+  <button id="btn4">Click Me..</button>
 </div>
-<div class="block section6">
+<div class="block section6" id="dontclass">
   <h2>On button click remove background color from p tage which one don't have any class</h2>
   <p class="intro">I live in Duckburg.</p>
   <p class="intro">I live in Duckburg.</p>
@@ -48,9 +47,9 @@
   <p class="intro">I live in Duckburg.</p>
   <p class="intro">I live in Duckburg.</p>
   <p class="intro">I live in Duckburg.</p>
-  <button>Click Me..</button>
+  <button id="btn5">Click Me..</button>
 </div>
-<div class="block section7">
+<div class="block section7" id="oddli">
 <h2>On click add background color inside 4, 5 and 6 </h2>
   <div>
     <ul>
@@ -64,11 +63,11 @@
          <li>8</li>
           <li>9</li>
   </ul>
-  <button>Click Me..</button>
+  <button id="btn6">Click Me..</button>
 </div>
 </div>
 
-<div class="block section8">
+<div class="block section8" id="except1">
 <h2>except 1 add border color to all element  </h2>
   <div>
     <ul>
@@ -82,26 +81,27 @@
          <li>8</li>
           <li>9</li>
   </ul>
-  <button>Click Me..</button>
+  <button id="btn7">Click Me..</button>
 </div>
 </div>
 
 
 <div class="block section4">
   <h2>after click on tab button content section need to be change</h2>
-  <div class="tabcontent">
-    <button>tab1</button><button>tab2</button>
-    <div class="content active">tab 1 content</div>
-    <div class="content">tab 2 content</div>
+  <div class="tabcontent" id="maintab">
+    <button id="tab1">tab1</button><button id="tab2">tab2</button>
+    <div class="content active" id="firsttab">tab 1 content</div>
+    <div class="content" id="secondtab">tab 2 content</div>
   </div>
 </div>
 
 <div class="block section10">
   <h2>on button click back to top with smooth scroll</h2>
-    <button>tab1</button>
+    <button id="btn10">tab1</button>
 </div>
 
 
+<script src="javascriptfunctions.js?v=1"></script>
 
 </body>
 </html>

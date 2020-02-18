@@ -31,7 +31,7 @@
 	border:1px solid black;
 	border-radius: 5px;
 	padding: 5px 20px;
-	background-color:#e9ebf0;
+	color:black; 
 
 }
 
@@ -46,6 +46,7 @@
 
 #header #profilelogo img{
 	border-radius: 25px;
+	transform: translateY(-10px);
 }
 
 #header #logout a{
@@ -61,7 +62,6 @@
 #header .navbar li{
 	border:1px solid black;
 	border-radius: 5px;
-	background-color:#e9ebf0; 
 	padding:5px 20px;
 	margin-right: 10px;
 	margin-left: 10px;
@@ -88,64 +88,35 @@
 
 }
 
-#profiledetails{
-	width: 300px;
-	height: inherit;
-	border-right: 1px solid purple;
-	padding: 20px 10px;
-}
+#editpost{
 
-#profiledetails h5{
-	margin: 10px 5px;
-}
-
-#profilelogo img{
-	border:2px solid black;
-	transform: translateY(-10px);
-}
-
-#main .allposts{
-
-	border:1px solid purple;
+	width:90%;
+	margin: 10px;
 	padding: 10px;
-	width:60%;
-	transform: translateX(200px);
+	border:2px solid purple;
 	border-radius: 8px;
-	margin-top: 20px;
 }
 
-#main .allposts h2{
-	color:#9944a6;
-
+#editpost input[type='submit']{
+	display: block;
+	padding:5px 15px;
+	margin:10px 0px;
+	border:1px solid purple;
+	border-radius: 8px;
 }
 
-#main .title h2{
-	width:500px;
-	display:inline-block;
-	margin-left: 10px;
-	transform: translateY(-10px);
+#editpost input[type='text']{
+	display: block;
+	padding:5px 15px;
+	margin:10px 0px;
+	border:1px solid purple;
+	border-radius: 8px;
 }
 
-#uploadedimg{
-	display:block;
-	margin-bottom: 10px;
-	border:1px solid black;
+#editpost textarea{
+	display: block;
+	padding:5px 15px;
+	margin:10px 0px;
+	border:1px solid purple;
+	border-radius: 8px;
 }
-
-#profileimg{
-	border:1px solid black;
-
-}
-.postbrief{
-	margin-top: 8px;
-}
-
-#viewpost{
-	
-	text-decoration: none;
-	display:inline-block;
-	margin-left: 10px;
-	margin-top: 10px;
-
-}
-

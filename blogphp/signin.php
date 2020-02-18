@@ -14,5 +14,11 @@ if(isset($_POST['submit'])){
 		$_SESSION['uid'] = $row['user_id'];
 		header('Location:homepage.php');
 	}
+	else{
+
+		header('Location:index.php?msg=invalid');
+	}
 	
 }
+
+?>

@@ -30,7 +30,7 @@ if($contents)
 					<div class="navbar">
 						<ul>
 							<li><a href="homepage.php">Home</a></li>
-							<li><a href="editposts.php">Myposts</a></li>
+							<li><a href="edit_post.php">Myposts</a></li>
 						</ul>
 
 					</div>
