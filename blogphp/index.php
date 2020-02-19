@@ -59,6 +59,15 @@
                 }
 
             }
+            else{
+
+                    echo "<div class='allposts'>";
+                    echo "<div class='title'>";
+                    echo "<h2>No Posts Are Present Login And Become The first To Add a Blog</h2>";
+                    echo "</div>";
+                    echo "</div>";
+
+            }
         ?>
     </div>
     </div>
