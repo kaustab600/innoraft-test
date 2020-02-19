@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+body{
+
+	font-family: 'Montserrat', sans-serif;
+}
+
 *{
 	margin : 0px;
 	padding: 0px;
@@ -32,6 +39,7 @@
 	border:1px solid black;
 	border-radius: 5px;
 	padding: 5px 20px;
+	background-color:#e9ebf0;
 }
 
 #header #logout a{
@@ -40,9 +48,13 @@
 }
 #header #logout:hover{
 
-	box-shadow: 2px 2px black;
+	box-shadow: 0px 0px 10px black;
 }
 
+#sigup:hover{
+
+	box-shadow: 0px 0px 10px black;
+}
 
 #header .navbar{
 	display: inline-block;
@@ -57,10 +69,11 @@
 	margin-right: 10px;
 	list-style: none;
 	display: inline-block;
+	background-color:#e9ebf0;
 }
 
 #header .navbar li:hover{
-	box-shadow: 2px 2px black;
+	box-shadow: 0px 0px 10px black;
 }
 
 #header .navbar a{

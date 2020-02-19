@@ -24,7 +24,7 @@ if($contents)
         <html>
         <head>
             <title>View Post</title>
-            <link rel="stylesheet" type="text/css" href="./styles/styleview_post.css?v=1">
+            <link rel="stylesheet" type="text/css" href="./styles/styleview_post.css">
         </head>
         <body>
         <div id="header">
@@ -32,17 +32,14 @@ if($contents)
                     <div id="logo">
                         <p>BLOG.</p>
                     </div>
-                    <div id="profilelogo"><?php echo "<img src= './profilepics/".$rowno['user_image']."' width='50px'/>"; ?></div>
+                    
                     <div class="navbar">
                         <ul>
-                            <li><a href="homepage.php">Home</a></li>
-                            <li><a href="edit_post.php">Myposts</a></li>
+                            <li><a href="index.php">Home</a></li>
                         </ul>
 
                     </div>
-                    <div id="logout">
-                        <a href="logout.php">Logout</a>
-                    </div>
+                    
                 </div>
             </div>
             <div id="main">

@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+body{
+
+	font-family: 'Montserrat', sans-serif;
+}
+
 *{
 	margin : 0px;
 	padding: 0px;
@@ -23,7 +30,18 @@
 	text-align: center;
 	color: black;
 	background-color:#e9ebf0;
+	animation-name:moving;
+	animation-duration: 4s;
+  	animation-iteration-count:infinite; 
 
+}
+
+@keyframes moving {
+  0% {transform: translateX(0px);}
+  25% {transform: translateX(20px); box-shadow:0px 0px 40px grey;}
+  50% {transform: translateX(0px) ;box-shadow:0px 0px 0px black;}
+  75% {transform: translateX(-20px) ;box-shadow:0px 0px 40px grey;}
+  100%{transform: translateX(0px);}
 }
 
 #header #logout{
@@ -37,7 +55,7 @@
 
 #header #logout:hover{
 
-	box-shadow: 2px 2px black;
+	box-shadow: 0px 0px 10px black;
 }
 
 #header #profilelogo{
@@ -70,7 +88,7 @@
 }
 
 #header .navbar li:hover{
-	box-shadow: 2px 2px black;
+	box-shadow: 0px 0px  10px black;
 }
 
 #header .navbar a{
@@ -99,9 +117,16 @@
 	margin: 10px 5px;
 }
 
-#profilelogo img{
+#userprofile{
+	display:inline-block;
+	width:100px;
+	float:right;
+	
+}
+#userprofile img{
 	border:2px solid black;
 	transform: translateY(-10px);
+	border-radius: 25px
 }
 
 #main .allposts{
@@ -124,6 +149,11 @@
 	display:inline-block;
 	margin-left: 10px;
 	transform: translateY(-10px);
+}
+
+#main .title a{
+	text-decoration: none;
+	color:purple;
 }
 
 #uploadedimg{
