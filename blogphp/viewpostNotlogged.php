@@ -1,7 +1,8 @@
 <?php
 
 require('connection.php');
-include('./blog/blog.php');
+require('./vendor/autoload.php');
+use blogs\blog;
 
 if(isset($_GET['pid'])){
     $postid = $_GET['pid'];
@@ -30,7 +31,7 @@ if($contents)
         <div id="header">
                 <div class="container">
                     <div id="logo">
-                        <p>BLOG.</p>
+                        <p>BLOGS!</p>
                     </div>
                     
                     <div class="navbar">
@@ -55,7 +56,7 @@ if($contents)
 
                     echo "<img id='uploadedimg' src='./postimages/".$rowno['upload_image']."' width='400px' height='250px'/>";
                     }
-                    echo "<h3>Title : ".$blog1->post_title."</h3>";
+                    echo "<h3>".$blog1->post_title."</h3>";
                     echo "<h5>Posted on : ".$blog1->post_date."</h5>";
                     echo "<hr>";
                     echo "<div id='content' >";

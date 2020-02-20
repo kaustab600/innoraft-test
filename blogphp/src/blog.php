@@ -1,5 +1,7 @@
 <?php
 
+namespace blogs; 
+
 class blog{
 
 	public $pid;

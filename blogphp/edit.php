@@ -1,6 +1,7 @@
 <?php require('connection.php');
-        include('./users/users.php');
-        include('./blog/blog.php');
+        require('./vendor/autoload.php');
+        use blogs\blog;
+        use blogs\users;
 
  ?>
 <!DOCTYPE html>

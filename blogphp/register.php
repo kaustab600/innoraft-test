@@ -5,13 +5,13 @@
 <html>
 <head>
     <title>Sign Up</title>
-    <link rel="stylesheet" type="text/css" href="./styles/registerpage.css?v=1">
+    <link rel="stylesheet" type="text/css" href="./styles/registerpage.css">
 </head>
 <body>
     <div id="header">
         <div class="container">
             <div id="logo">
-                <p>BLOG.</p>
+                <p>BLOGS!</p>
             </div>
             <div id="sigup">
                 <a href="Loginpage.php">Sign In</a>
@@ -56,8 +56,8 @@
                 </form>
             </div>
             <div id="wallpaper"><img src="./images/blogregister.jpeg"></div>
-        </div>
-    </div>
+        </div><br><br><br>
+    </div><br><br><br>
 </body>
 <?php 
     require('signup.php');

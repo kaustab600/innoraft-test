@@ -1,12 +1,13 @@
 <?php require('connection.php'); 
-    include('./users/users.php');
-    include('./blog/blog.php');
+    require('./vendor/autoload.php');
+    use blogs\blog;
+    use blogs\users;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Edit Post</title>
-    <link rel="stylesheet" type="text/css" href="./styles/editcontent.css?v=1">
+    <link rel="stylesheet" type="text/css" href="./styles/editcontent.css">
 </head>
 <body>
 
@@ -27,9 +28,9 @@
     <div id="header">
         <div class="container">
             <div id="logo">
-                <p>BLOG.</p>
+                <p>BLOGS!</p>
             </div>
-            <div id="profilelogo"><?php echo "<img src= './profilepics/".$user1->img."' width='50px'/>"; }?></div>
+            <div id="profilelogo"><a href="profile.php"><?php echo "<img src= './profilepics/".$user1->img."' width='50px'/>"; }?></a></div>
             <div class="navbar">
                 <ul>
                     <li><a href="edit_post.php">My Posts</a></li>
@@ -62,7 +63,7 @@
     <?php
                 if(isset($_POST['submit'])){
 
-                    $img ="";
+                    $img = "";
                     $file_name = $_FILES['pic']['name'];
                     
                     $file_tmp =$_FILES['pic']['tmp_name'];
@@ -77,14 +78,10 @@
 
                      $blog1 = new blog(0,'now()',$title,$content);
 
-                    if($img!=""){
+                    
 
                     $q2 = "insert into  posts(user_id,post_content,upload_image,post_date,post_title) values('".$userid."','".$blog1->post_content."','".$img."',now(),'".$blog1->post_title."')";
-                    }
-                    else{
-
-                        $q2 = "insert into  posts(user_id,post_content,post_date,post_title) values('".$userid."','".$blog1->post_content."',now(),'".$blog1->post_title."')";
-                    }
+                    
 
                     $update_content = $conn->query($q2);
                     if($update_content){

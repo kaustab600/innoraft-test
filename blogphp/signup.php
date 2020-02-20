@@ -1,6 +1,7 @@
 <?php
     
-    include('./users/users.php');
+    require('./vendor/autoload.php');
+    use blogs\users;
     
     if(isset($_POST['submit'])){
 

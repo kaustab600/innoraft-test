@@ -1,11 +1,14 @@
 <?php require('connection.php'); 
-      include('./blog/blog.php');
+      require('./vendor/autoload.php');
+      use blogs\blog ;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Main Page</title>
-    <link rel="stylesheet" type="text/css" href="./styles/stylehome.css">
+    <link rel="stylesheet" type="text/css" href="./styles/stylehome.css?v=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./myscript.js"></script>
 </head>
 <body>
 
@@ -13,7 +16,7 @@
     <div id="header">
         <div class="container">
             <div id="logo">
-                <p>BLOG.</p>
+                <p>BLOGS!</p>
             </div>
             <div class="navbar">
                 <ul>
@@ -41,20 +44,19 @@
                     if($rowno['user_image'])
                     {
 
-                        echo "<img id='profileimg' src='./profilepics/".$rowno['user_image']."' width='50px' style='border-radius:50%' />";
+                        echo "<a href='seeprofiles.php?uid=".$rowno['user_id']."'><img id='profileimg' src='./profilepics/".$rowno['user_image']."' width='50px' style='border-radius:50%' /></a>";
                     }
-                    echo "<h2><a href='seeprofiles.php?uid=".$rowno['user_id']."'>".$rowno['user_name']."</a></h2>";
+                    echo "<h2><a id='viewpost' href='viewpostNotlogged.php?pid=".$blog1->pid."'>".$blog1->post_title."</a></h2>";
                     if($rowno['upload_image']){
 
                     echo "<img id='uploadedimg' src='./postimages/".$rowno['upload_image']."' width='150px' style='border-radius:10px'/>";
                     }
-                    echo "<h3>Title : ".$blog1->post_title."</h3>";
+                    echo "<h3>".$rowno['user_name']."</h3>";
                     echo "</div>";
                     echo "<div class='postbrief'>";
                     echo "<h5>Posted on : ".$blog1->post_date."</h5>";
+                   
                     echo "</div>";
-                    //$_SESSION['pid'] = $rowno['post_id'];
-                    echo "<a id='viewpost' href='viewpostNotlogged.php?pid=".$blog1->pid."'>View</a>";
                     echo "</div>";
                 }
 

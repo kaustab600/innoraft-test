@@ -1,6 +1,7 @@
 <?php require('connection.php'); 
-      include('./users/users.php');
-      include('./blog/blog.php');
+      require('./vendor/autoload.php');
+      use blogs\blog;
+      use blogs\users;
 
 ?>
 <!DOCTYPE html>
@@ -8,6 +9,8 @@
 <head>
     <title>My Posts</title>
     <link rel="stylesheet" type="text/css" href="./styles/stylehome.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./myscript.js"></script>
 </head>
 <body>
 
@@ -28,9 +31,9 @@
     <div id="header">
         <div class="container">
             <div id="logo">
-                <p>BLOG.</p>
+                <p>BLOGS!</p>
             </div>
-            <div id="profilelogo"><?php echo "<img src= './profilepics/".$user1->img."' width='50px'/>"; }?></div>
+            <div id="userprofile"><a href="profile.php"><?php echo "<img src= './profilepics/".$user1->img."' width='50px'/>"; }?></a></div>
             <div class="navbar">
                 <ul>
                     <li><a href="addpost.php">Add Post</a></li>
@@ -67,7 +70,7 @@
 
                     echo "<img id='uploadedimg' src='./postimages/".$rowno['upload_image']."' width='150px'/>";
                     }
-                    echo "<h3>Title : ".$blog1->post_title."</h3>";
+                    echo "<h3>".$blog1->post_title."</h3>";
                     echo "</div>";
                     echo "<div class='postbrief'>";
                     echo "<h5>Posted on : ".$blog1->post_date."</h5>";

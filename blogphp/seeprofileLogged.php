@@ -2,7 +2,8 @@
 
 require('connection.php');
 
-include('./users/users.php');
+require('./vendor/autoload.php');
+use blogs\users;
 
         session_start();
         $userid = $_SESSION['uid'];
@@ -72,7 +73,7 @@ include('./users/users.php');
                         }
                         else{
                             //echo $rows['user_image'];
-                            echo "<img src='profilepics/".$user2->img."' width='200px' style='border:1px solid black' />";      
+                            echo "<img src='profilepics/".$user2->img."' width='200px' style='border:1px solid black' /><br>";      
                         }
 
                  ?>

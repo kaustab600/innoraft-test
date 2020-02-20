@@ -2,7 +2,8 @@
 
 require('connection.php');
 
-include('./users/users.php');
+require('./vendor/autoload.php');
+use blogs\users;
 
         session_start();
         $userid = $_SESSION['uid'];
@@ -22,7 +23,7 @@ include('./users/users.php');
 <html>
 <head>
     <title>Profile</title>
-    <link rel="stylesheet" type="text/css" href="./styles/styleprofile.css?v=1">
+    <link rel="stylesheet" type="text/css" href="./styles/styleprofile.css">
 </head>
 <body>
         <div id="header">
@@ -30,15 +31,15 @@ include('./users/users.php');
             <div id="logo">
                 <p>BLOG.</p>
             </div>
-            
-            <div id="logout">
-                <a href="logout.php">Logout</a>
-            </div>
+        
             <div class="navbar">
                 <ul>
                     <li><a href="edit_profile.php">Edit Profile</a></li>
                     <li><a href="homepage.php">Home</a></li>
                 </ul>               
+            </div>
+            <div id="logout">
+                <a href="logout.php">Logout</a>
             </div>
         </div>
         </div>

@@ -15,21 +15,24 @@ body{
 	float: left;
 	width: 100%;
 	background-color: purple;
-	padding:20px;
+	padding:30px;
 	margin:auto 0;
 	border:2px solid black;
 }
 
 
+#header #logo{
+	display: inline-block;
+	width:100px;
+	height: 20px;
+}
+
 #header #logo p{
-	border: 1px solid black;
-	border-radius: 5px;
-	padding: 10px;
-	width:10%;
-	box-shadow: 3px 3px 4px black;
-	text-align: center;
-	color: black;
-	background-color:#e9ebf0;
+	
+	width:100%;
+	text-shadow: 5px 5px 3px black;
+	color: white;
+	font-size: 26px;	
 
 }
 
@@ -39,7 +42,7 @@ body{
 	border-radius: 5px;
 	padding: 5px 20px;
 	color:black; 
-	background-color:#e9ebf0; 
+	background-color:#badee6; 
 
 }
 
@@ -58,6 +61,7 @@ body{
 }
 
 #header #profilelogo img{
+	border:2px solid black;
 	border-radius: 25px;
 	transform: translateY(-10px);
 }
@@ -80,7 +84,7 @@ body{
 	margin-left: 10px;
 	list-style: none;
 	display: inline-block;
-	background-color:#e9ebf0; 
+	background-color:#badee6; 
 }
 
 #header .navbar li:hover{
@@ -105,7 +109,7 @@ body{
 #editpost{
 
 	width:90%;
-	margin: 10px;
+	margin: 30px 10px;
 	padding: 10px;
 	border:2px solid purple;
 	border-radius: 8px;

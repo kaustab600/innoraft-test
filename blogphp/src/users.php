@@ -1,5 +1,7 @@
 <?php
 
+namespace blogs; 
+
 class users{
 
 	public $uid;

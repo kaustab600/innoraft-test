@@ -2,13 +2,13 @@
 <html>
 <head>
     <title>Blog Page</title>
-    <link rel="stylesheet" type="text/css" href="./styles/styleindex.css?v=1">
+    <link rel="stylesheet" type="text/css" href="./styles/styleindex.css">
 </head>
 <body>
     <div id="header">
         <div class="container">
             <div id="logo">
-                <p>BLOG.</p>
+                <p>BLOGS!</p>
             </div>
             <div id="sigup">
                 <a href="register.php">Sign Up</a>
@@ -20,17 +20,18 @@
     </div>
     <div id="main">
         <div class="container">
-            <div id="signin">
-                <h2>Login In</h2>
-                <form name="frm1" method="post" >
-                    <h4>Username</h4>
+            <div id="signin1">
+                
+                <form name="frm1" id="signin" method="post" >
+                    <h2>Login In</h2>
+                    <label for="username">Username</label>
                     <input type="text" name="username">
-                    <h4>Password</h4>
+                    <br><label for="password">Password</label>
                     <input type="password" name="password">
-                    <input type="submit" name="submit" value="SignIn">
+                    <br><input type="submit" name="submit" value="SignIn">
                 </form>
             </div>
-            <div id="wallpaper"><img src="./images/blogimg.jpg"></div>
+            <!-- <div id="wallpaper"><img src="./images/blogimg.jpg"></div> -->
         </div>
     </div>
     <?php require('signin.php'); 
