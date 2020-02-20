@@ -60,6 +60,7 @@ use blogs\users;
             <div class="navbar">
                 <ul>
                     <li><a href="homepage.php">Home</a></li>
+                    <li><a href="recentpost.php?authorid=<?php echo $user2->uid; ?>">Recent Posts</a></li>
                 </ul>               
             </div>
         </div>
