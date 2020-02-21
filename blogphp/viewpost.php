@@ -1,77 +1,35 @@
 <?php
 
-require('connection.php');
-require('./vendor/autoload.php');
-use blogs\blog;
+if(isset($_GET['pid']) and isset($_SESSION['uid'])){
 
-if(isset($_GET['pid'])){
+    include('modelMainpage.php');
+
+    // getting blog posts
+    $blog1 = new blog();
     $postid = $_GET['pid'];
+
+    $q1 = "select u.user_name , u.user_image, p.post_title , p.post_id, p.post_date , p.upload_image ,p.post_content from posts p inner join users u on p.user_id =u.user_id where p.post_id =".$postid;
+    $rows = $blog1->get_all_Posts($q1);
+
+    // getting users details
+    $user1 = new users();
+    session_start();
+    $query = "select * from users where user_id = '".$_SESSION['uid']."'";
+    $u = $user1->get_all_Users($query);
+
+    // including view post theme
+    include('viewposttheme.php');
+
 }
-elseif(!isset($_GET['pid'])){
+else{
     header('Location:Loginpage.php');
 }
 
-$q1 = "select u.user_name , u.user_image, p.post_title , p.post_id, p.post_date , p.upload_image ,p.post_content from posts p inner join users u on p.user_id =u.user_id where p.post_id =".$postid;
-$contents = $conn->query($q1);
 
-if($contents)
-{
-    $rowno = $contents->fetch_assoc();
 
-    //calling blog constructor
-    $blog1 = new blog($rowno['post_id'],$rowno['post_date'],$rowno['post_title'],$rowno['post_content']);
- ?>
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <title>View Post</title>
-            <link rel="stylesheet" type="text/css" href="./styles/styleview_post.css?v=2">
-        </head>
-        <body>
-            
-        <div id="header">
-                <div class="container">
-                    <div id="logo">
-                        <p>BLOGS!</p>
-                    </div>
-                    <div id="profilelogo"><a href="profile.php"><?php echo "<img src= './profilepics/".$rowno['user_image']."' width='50px'/>"; ?></a></div>
-                    <div class="navbar">
-                        <ul>
-                            <li><a href="homepage.php">Home</a></li>
-                            <li><a href="edit_post.php">Myposts</a></li>
-                        </ul>
 
-                    </div>
-                    <div id="logout">
-                        <a href="logout.php">Logout</a>
-                    </div>
-                </div>
-            </div>
-            <div id="main">
-                <div class="container">
- <?php
-            echo "<div id='postcontent'>";
-                    if($rowno['user_image']){
 
-                        echo "<img id='profileimg' src='./profilepics/".$rowno['user_image']."' width='50px' style='border-radius:50%' />";
-                    }
-                    echo "<h2>".$rowno['user_name']."</h2>";
-                    if($rowno['upload_image']){
 
-                    echo "<img id='uploadedimg' src='./postimages/".$rowno['upload_image']."' width='400px' height='250px'/>";
-                    }
-                    echo "<h3>".$blog1->post_title."</h3>";
-                    echo "<h5>Posted on : ".$blog1->post_date."</h5>";
-                    echo "<hr>";
-                    echo "<div id='content' >";
-                    echo "<h4>".$blog1->post_content."</h4>";
-                    echo "</div>";
-            echo "</div>";
-}
 
-?>  
-                </div>
-            </div>
-</body>
-</html>
+
 

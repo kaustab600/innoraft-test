@@ -1,7 +1,4 @@
-<?php require('connection.php'); 
-      require('./vendor/autoload.php');
-      use blogs\blog ;
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,31 +27,25 @@
     <div id="main">
         <div class="container">
         <?php
-            $q1 = "select u.user_id,p.post_id ,u.user_name,u.user_image,p.post_title, p.post_date,p.post_content,p.upload_image from posts p inner join users u on p.user_id =u.user_id order by p.post_date desc";
-
-            $allposts = $conn->query($q1);
-            if($allposts){
-                while($rowno = $allposts->fetch_assoc()){
-
-                    //calling blog constructor
-                    $blog1 = new blog($rowno['post_id'],$rowno['post_date'],$rowno['post_title'],$rowno['post_content']);
-
-                    echo "<div class='allposts'>";
+              if(!empty($p)){
+                  foreach($p as $rowno){
+                    
+                   echo "<div class='allposts'>";
                     echo "<div class='title'>";
                     if($rowno['user_image'])
                     {
 
                         echo "<a href='seeprofiles.php?uid=".$rowno['user_id']."'><img id='profileimg' src='./profilepics/".$rowno['user_image']."' width='50px' style='border-radius:50%' /></a>";
                     }
-                    echo "<h2><a id='viewpost' href='viewpostNotlogged.php?pid=".$blog1->pid."'>".$blog1->post_title."</a></h2>";
+                    echo "<h2><a id='viewpost' href='viewpostNotlogged.php?pid=".$rowno['post_id']."'>".$rowno['post_title']."</a></h2>";
                     if($rowno['upload_image']){
 
-                    echo "<img id='uploadedimg' src='./postimages/".$rowno['upload_image']."' width='150px' style='border-radius:10px'/>";
+                    echo "<a id='viewpost' href='viewpostNotlogged.php?pid=".$rowno['post_id']."'><img id='uploadedimg' src='./postimages/".$rowno['upload_image']."' width='250px' style='border-radius:10px'/></a>";
                     }
                     echo "<h3>".$rowno['user_name']."</h3>";
                     echo "</div>";
                     echo "<div class='postbrief'>";
-                    echo "<h5>Posted on : ".$blog1->post_date."</h5>";
+                    echo "<h5>Posted on : ".$rowno['post_date']."</h5>";
                    
                     echo "</div>";
                     echo "</div>";

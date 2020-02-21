@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
         $row = $no_of_users->fetch_assoc();
         session_start();
         $_SESSION['uid'] = $row['user_id'];
-        header('Location:homepage.php');
+        header('Location:homepage_controller.php');
     }
     else{
 

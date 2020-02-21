@@ -1,34 +1,48 @@
 <?php
+namespace blogs;
 
-namespace blogs; 
+class users extends connect{
 
-class users{
+        public  $users = [];
 
-	public $uid;
-	public $fname;
-	public $lname;
-	public $username;
-	public $email;
-	public $pass;
-	public $desc;
-	public $country;
-	public $gender;
-	public $regdate;
-	public $img;
+      function get_all_Users($query){
 
-	function __construct($id,$f,$l,$u,$e,$p,$d,$c,$g,$reg,$img){
+        $conn = $this->connection();
 
-		$this->uid = $id;
-		$this->fname = $f;
-		$this->lname = $l;
-		$this->username = $u;
-		$this->email = $e;
-		$this->pass = $p;
-		$this->desc = $d;
-		$this->country = $c;
-		$this->gender = $g;
-		$this->regdate = $reg;
-		$this->img = $img;
-	}
+       
+        $q = $query;
+        /*$q = "select * from users";*/
 
-}
+        $res = $conn->query($q);
+
+        if($res){
+
+          while($rows = $res->fetch_assoc()){
+            $users[] = $rows;
+          }
+        }
+
+        return $users;
+      }
+
+      function updateProfile($fname,$lname,$username,$status,$country,$gender,$file_name,$userid){
+
+            $conn = $this->connection();
+
+
+            $q = "update users set f_name = '".$fname."',l_name = '".$lname."',user_name = '".$username."',describe_user = '".$status."',user_country = '".$country."',user_gender = '".$gender."',user_image = '".$file_name."' where user_id =".$userid;
+
+           $update_profile = $conn->query($q);
+            if($update_profile){
+                echo "sucessfully updated";
+            }
+            else{
+                echo $conn->connect_error;
+            }
+
+      }
+
+      
+    }
+
+    // $ob=new users();	
