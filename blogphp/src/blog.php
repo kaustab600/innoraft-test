@@ -1,9 +1,9 @@
 <?php
 namespace blogs;
-
-require_once('blogphp/vendor/autoload.php');
-
 use blog\connect;
+
+require('../vendor/autoload.php');
+
   class blog extends connect{
 
         public  $posts = [];
