@@ -1,8 +1,6 @@
 <?php
 namespace blogs;
-use blog\connect;
-
-require('../vendor/autoload.php');
+/*require('../vendor/autoload.php');*/
 
   class blog extends connect{
 

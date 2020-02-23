@@ -1,7 +1,8 @@
 {
- "autoload":{
+	"autoload":{
 		"psr-4":{
 			"blogs\\":"src"
 		}
-	}   
+	}  
+  
 }

@@ -1,13 +1,13 @@
- <?php
- namespace blogs;
- 
+<?php
+namespace blogs;
+
  class connect{
 
     function connection(){
 
         $server = "localhost";
         $user = "root";
-        $pass = "12345";
+        $pass = "";
         $db = "blogdb";
 
         $conn =  mysqli_connect($server,$user,$pass,$db);
@@ -21,5 +21,4 @@
       }
 
   }
-
 ?>

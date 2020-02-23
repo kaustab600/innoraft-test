@@ -1,8 +1,6 @@
 <?php
 
-/*include('modelMainpage.php');*/
-
-require 'vendor/autoload.php';
+require('./vendor/autoload.php');
 use blogs\blog;
 
 $blog1 = new blog();

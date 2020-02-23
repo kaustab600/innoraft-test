@@ -1,8 +1,8 @@
 <?php
 namespace blogs;
-use blogs\connect;
+/*use blogs\connect;*/
 
-require('../vendor/autoload.php');
+/*require('../vendor/autoload.php');*/
 
 class users extends connect{
 

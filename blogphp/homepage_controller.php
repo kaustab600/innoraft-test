@@ -6,7 +6,8 @@ if(!isset($_SESSION['uid'])){
   }
 $userid = $_SESSION['uid'];
 
-include('modelMainpage.php');
+/*include('modelMainpage.php');*/
+require('../vendor/autoload.php');
 
 
 $user1 = new users();
