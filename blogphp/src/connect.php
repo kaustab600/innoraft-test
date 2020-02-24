@@ -7,7 +7,7 @@ class connect{
 
         $server = "localhost";
         $user = "root";
-        $pass = "12345";
+        $pass = "";
         $db = "blogdb";
 
         $conn =  mysqli_connect($server,$user,$pass,$db);

@@ -4,16 +4,11 @@ namespace blogs;
 
   class blog extends connect{
 
-        public  $posts = [];
-
-        
-
+      
       function get_all_Posts($query){
 
+        $posts =[];
         $conn = $this->connection();
-
-       
-
         $q = $query;
 
         $res = $conn->query($q);
@@ -31,6 +26,7 @@ namespace blogs;
 
       function getPosts(){
 
+        $posts =[];
         $conn = $this->connection();
 
         $q1 = "select u.user_id,p.post_id ,u.user_name,u.user_image,p.post_title, p.post_date,p.post_content,p.upload_image from posts p inner join users u on p.user_id =u.user_id order by p.post_date desc";
@@ -101,5 +97,3 @@ namespace blogs;
 
 
     }
-
-$blog1 = new blog();

@@ -28,27 +28,34 @@
             
             <div id="main">
                 <div class="container">
- <?php
-   echo "<div id='postcontent'>";
-    foreach($rows as $rowno){
+ 
+                    <div id='postcontent'>
+                <?php
+                foreach($rows as $rowno){
                     if($rowno['user_image']){
-
-                        echo "<img id='profileimg' src='../profilepics/".$rowno['user_image']."' width='50px' style='border-radius:50%' />";
+                  ?>
+                      <img id='profileimg' src='../profilepics/<?php echo $rowno['user_image']; ?>' width='50px' style='border-radius:50%' />
+                    <?php
                     }
-                    echo "<h2>".$rowno['user_name']."</h2>";
+                    ?>
+                     <h2><?php echo $rowno['user_name']; ?></h2>
+                    <?php
                     if($rowno['upload_image']){
-
-                    echo "<img id='uploadedimg' src='../postimages/".$rowno['upload_image']."' width='400px' height='250px'/>";
+                      ?>
+                    <img id='uploadedimg' src='../postimages/<?php echo $rowno['upload_image']; ?>' width='400px' height='250px'/>
+                    <?php
                     }
-                    echo "<h3>".$rowno['post_title']."</h3>";
-                    echo "<h5>Posted on : ".$rowno['post_date']."</h5>";
-                    echo "<hr>";
-                    echo "<div id='content' >";
-                    echo "<h4>".$rowno['post_content']."</h4>";
-                    echo "</div>";
-                }          
-     echo "</div>";         
-?>  
+                    ?>
+                     <h3><?php echo $rowno['post_title']; ?></h3>
+                     <h5>Posted on : <?php echo $rowno['post_date']; ?></h5>
+                     <hr>
+                     <div id='content' >
+                     <h4><?php echo $rowno['post_content']; ?></h4>
+                    </div>
+              <?php
+                } 
+              ?>         
+                    </div> 
                 </div>
             </div>
 </body>

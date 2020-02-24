@@ -33,34 +33,42 @@
               if(!empty($blog_details)){
 
                 foreach($blog_details as $rowno){
-
-                    echo "<div class='allposts'>";
-                    echo "<div class='title'>";
+            ?>
+                    <div class='allposts'>
+                    <div class='title'>
+                <?php
                     if($rowno['user_image'])
                     {
-
-                        echo "<img id='profileimg' src='../profilepics/".$rowno['user_image']."' width='50px' style='border-radius:50%' />";
+                ?>
+                        <img id='profileimg' src='../profilepics/<?php echo $rowno['user_image']; ?>' width='50px' style='border-radius:50%' />
+                <?php
                     }
-                    echo "<h2>".$rowno['user_name']."</h2>";
+                ?>
+                    <h2><?php echo $rowno['user_name']; ?></h2>
+                <?php 
                     if($rowno['upload_image']){
-
-                    echo "<img id='uploadedimg' src='../postimages/".$rowno['upload_image']."' width='150px'/>";
+                ?>
+                      <img id='uploadedimg' src='../postimages/<?php echo $rowno['upload_image']; ?>' width='150px'/>
+                <?php
                     }
-                    echo "<h3>".$rowno['post_title']."</h3>";
-                    echo "</div>";
-                    echo "<div class='postbrief'>";
-                    echo "<h5>Posted on : ".$rowno['post_date']."</h5>";
-                    echo "<hr>";
-                    echo "<h5>".$rowno['post_content']."</h5>";
-                    echo "</div>";
-                    echo "</div>";
+                ?>
+                    <h3><?php echo $rowno['post_title'];?></h3>
+                    </div>
+                    <div class='postbrief'>
+                    <h5>Posted on :<?php echo $rowno['post_date']; ?></h5>
+                    <hr>
+                    <h5><?php echo $rowno['post_content']; ?></h5>
+                    </div>
+                    </div>
+                <?php
                 }
               }
             else{
-
-                echo "<div class='allposts'>";
-                echo "<h4>No Posts Yet!/h4>";
-                echo "</div>";
+            ?>
+                <div class='allposts'>
+                <h4>No Posts Yet!</h4>
+                </div>
+            <?php
             }
         ?>
         </div>

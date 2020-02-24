@@ -5,7 +5,7 @@
     <title>My Posts</title>
     <link rel="stylesheet" type="text/css" href="../styles/stylehome.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="../myscript.js"></script>
+    <!-- <script src="../myscript.js"></script>  -->
 </head>
 <body>
     <div id="header">
@@ -32,34 +32,38 @@
             <?php
             if(!empty($rows)){
                 foreach($rows as $rowno){
-
-                    echo "<div class='allposts'>";
-                    echo "<div class='title'>";
-                    
+            ?>
+                    <div class='allposts'>
+                    <div class='title'>
+            <?php        
                     if($rowno['upload_image']){
-
-                    echo "<img id='uploadedimg' src='../postimages/".$rowno['upload_image']."' width='250px'/>";
+                ?>
+                     <img id='uploadedimg' src='../postimages/<?php echo $rowno['upload_image']; ?>' width='250px'/>
+                <?php
                     }
-                    echo "<h3>".$rowno['post_title']."</h3>";
-                    echo "</div>";
-                    echo "<div class='postbrief'>";
-                    echo "<h5>Posted on : ".$rowno['post_date']."</h5>";
-                    echo "<hr>";
-                    echo "<h5>".$rowno['post_content']."</h5>";
-                    echo "</div>";
-                    //$_SESSION['pid'] = $rowno['post_id'];
-                    echo "<a id='viewpost' href='../controller/edit.php?pid=".$rowno['post_id']."'>Edit</a>";
-                    //echo "<a id='viewpost' href='delete.php?pid=".$rowno['post_id']."'>delete</a>";
+                ?>
+                    <h3><?php echo $rowno['post_title']; ?></h3>
+                    </div>
+                    <div class='postbrief'>
+                    <h5>Posted on :<?php echo $rowno['post_date'];?></h5>
+                    <hr>
+                    <h5><?php echo $rowno['post_content'];?></h5>
+                    </div>
+                    <a id='viewpost' href='../controller/edit.php?pid=<?php echo $rowno['post_id']; ?>'>Edit</a>
+                <?php
                     echo "<a id='viewpost' onClick=\"javascript: return confirm('Please confirm deletion');\" href='../controller/deletepost.php?pid=".$rowno['post_id']."'>Delete</a>";
-                    echo "</div>";
+                ?>
+                    </div>
+                <?php
                 }
 
             }
             else{
-
-                echo "<div class='allposts'>";
-                echo "<h4>No Posts Yet! You can Add Posts from Addpost section at navbar</h4>";
-                echo "</div>";
+            ?>
+                 <div class='allposts'>
+                 <h4>No Posts Yet! You can Add Posts from Addpost section at navbar</h4>
+                 </div>
+        <?php 
             }
         ?>
         </div>

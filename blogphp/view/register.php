@@ -5,6 +5,7 @@
 <head>
     <title>Sign Up</title>
     <link rel="stylesheet" type="text/css" href="../styles/registerpage.css">
+    
 </head>
 <body>
     <div id="header">
@@ -28,20 +29,20 @@
                     <h4>Profile Pic</h4>
                     <input type="file" name="profilepic">
                     <h4>First Name</h4>
-                    <input type="text" name="fname" required>
+                    <input type="text" name="fname" id="fname" required>
                     <h4>Last Name</h4>
-                    <input type="text" name="lname" required>
+                    <input type="text" name="lname" id="lname" required>
                     <h4>Username</h4>
-                    <input type="text" name="username" required>
+                    <input type="text" name="username"  required>
                     <h4>Describe user</h4>
-                    <input type="text" name="describeuser" required>
+                    <input type="text" name="describeuser"  required>
                     <h4>email</h4>
-                    <input type="text" name="email" required>
+                    <input type="text" name="email" id="mail" required>
                     <h4>password</h4>
-                    <input type="password" name="pass" required>
+                    <input type="password" name="pass" id="pass" required>
                     <h4>confirm password</h4>
-                    <input type="password" name="crfmpass" required>
-                    <select name="country">
+                    <input type="password" name="crfmpass" id="crfmpass" required>
+                    <select name="country" required>
                         <option selected>please select your country</option>
                         <option value="India">India</option>
                         <option value="USA">USA</option>
@@ -57,6 +58,7 @@
             <div id="wallpaper"><img src="../images/blogregister.jpeg"></div>
         </div>
     </div>
+    <script src="../validation.js"></script>
 </body>
 <?php 
     //including controller of register.php

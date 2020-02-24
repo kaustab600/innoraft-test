@@ -19,11 +19,11 @@ class users extends connect{
         if($res){
 
           while($rows = $res->fetch_assoc()){
-            $users[] = $rows;
+            $this->users[] = $rows;
           }
         }
 
-        return $users;
+        return $this->users;
       }
 
       function updateProfile($fname,$lname,$username,$status,$country,$gender,$file_name,$userid){

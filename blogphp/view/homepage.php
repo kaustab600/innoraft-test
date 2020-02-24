@@ -34,37 +34,44 @@
             
             if(!empty($rows)){
                 foreach($rows as $rowno){
-
-                    echo "<div class='allposts'>";
-                    echo "<div class='title'>";
+        ?>
+                    <div class='allposts'>
+                    <div class='title'>
+                <?php 
                     if($rowno['user_image'])
                     {
-
-                        echo "<a href='../controller/seeprofilesLogged.php?userid=".$rowno['user_id']."'><img id='profileimg' src='../profilepics/".$rowno['user_image']."' width='50px' style='border-radius:50%' /></a>";
+                ?>
+                        <a href='../controller/seeprofilesLogged.php?userid=<?php echo $rowno['user_id'];?>'><img id='profileimg' src='../profilepics/<?php echo $rowno['user_image'];?>' width='50px' style='border-radius:50%' /></a>
+                <?php 
                     }
-                    echo "<h2><a id='viewpost' href='../controller/viewpost.php?pid=".$rowno['post_id']."'>".$rowno['post_title']."</a></h2>";
+                  ?>
+                    <h2><a id='viewpost' href='../controller/viewpost.php?pid=<?php echo $rowno['post_id'];?>'><?php echo $rowno['post_title'];?></a></h2>
+                <?php
                     if($rowno['upload_image']){
-
-                    echo "<a id='viewpost' href='../controller/viewpost.php?pid=".$rowno['post_id']."'><img id='uploadedimg' src='../postimages/".$rowno['upload_image']."' width='200px' height='150px' style='border-radius:10px'/></a>";
+                ?>
+                     <a id='viewpost' href='../controller/viewpost.php?pid=<?php echo $rowno['post_id'];?>'><img id='uploadedimg' src='../postimages/<?php echo $rowno['upload_image'];?>' width='200px' height='150px' style='border-radius:10px'/></a>
+                <?php
                     }
-                    echo "<h3>".$rowno['user_name']."</h3>";
-                    echo "</div>";
-                    echo "<div class='postbrief'>";
-                    echo "<h5>Posted on : ".$rowno['post_date']."</h5>";
-                    echo "</div>";
-                    //$_SESSION['pid'] = $rowno['post_id'];
-                    
-                    echo "</div>";
+                ?>
+                     <h3><?php echo $rowno['user_name'];?></h3>
+                    </div>
+                    <div class='postbrief'>
+                    <h5>Posted on :<?php echo $rowno['post_date']; ?></h5>
+                    </div>
+                    </div>
+            <?php 
                 }
 
             }
             else{
 
-                    echo "<div class='allposts'>";
-                    echo "<div class='title'>";
-                    echo "<h2>No Posts Are Present Login And Become The first To Add a Blog</h2>";
-                    echo "</div>";
-                    echo "</div>";
+            ?>        
+                    <div class='allposts'>
+                    <div class='title'>
+                    <h2>No Posts Are Present Login And Become The first To Add a Blog</h2>
+                    </div>
+                    </div>
+         <?php        
 
             }
         ?>
