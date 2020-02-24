@@ -73,7 +73,7 @@ namespace blogs;
                     $update_content = $conn->query($q2);
                     if($update_content){
                         //echo "sucessfully updated";
-                        header('Location:edit_post.php');
+                        header('Location:../controller/edit_post.php');
                     }
                     else{
                         echo "not updated";
@@ -91,7 +91,7 @@ namespace blogs;
           $update_content = $conn->query($q2);
                     if($update_content){
                         echo "sucessfully updated";
-                        header('Location:homepage_controller.php');
+                        header('Location:../controller/homepage_controller.php');
                     }
                     else{
                         echo "not updated";

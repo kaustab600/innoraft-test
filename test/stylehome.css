@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+body{
+
+	font-family: 'Montserrat', sans-serif;
+
+}
+
+*{
+	margin : 0px;
+	padding: 0px;
+	box-sizing: border-box;
+
+}
+
+#header{
+	float: left;
+	width: 100%;
+	background-color: purple;
+	padding:30px;
+	margin:auto 0;
+	border:2px solid black;
+	z-index: 1;
+
+	
+}
+
+#header #logo{
+
+	display: inline-block;
+	width:100px;
+	height: 20px;
+}
+
+#header #logo p{
+	
+	width:100%;
+	text-shadow: 5px 5px 3px black;
+	color: white;
+	font-size: 26px;	
+
+}
+
+/*@keyframes moving {
+  0% {transform: translateX(0px);}
+  25% {transform: translateX(20px); box-shadow:0px 0px 40px grey;}
+  50% {transform: translateX(0px) ;box-shadow:0px 0px 0px black;}
+  75% {transform: translateX(-20px) ;box-shadow:0px 0px 40px grey;}
+  100%{transform: translateX(0px);}
+}*/
+
+@keyframes moving {
+	0%{ z-index: 0; box-shadow: 0px 0px 40px pink; }
+	25%{ z-index: 2; box-shadow: 0px 0px 40px black; }
+	50%{ z-index: 2; box-shadow: 0px 0px 40px pink; }
+	75%{ z-index: 0; box-shadow: 0px 0px 40px black; }
+	100%{ z-index: 2; box-shadow: 0px 0px 40px pink; }
+
+}
+
+
+#header #logout{
+	float: right;
+	border:1px solid black;
+	border-radius: 5px;
+	padding: 5px 20px;
+	background-color:#badee6; 
+}
+
+#header #logout:hover{
+
+	box-shadow: 0px 0px 10px black;
+}
+
+#header #profilelogo{
+	float:right;
+}
+
+#header #profilelogo img{
+	border-radius: 25px;
+}
+
+#header #logout a{
+	text-decoration: none;
+	color: black;
+}
+
+#header .navbar{
+	display: inline-block;
+	float:right;
+}
+
+#header .navbar li{
+	border:1px solid black;
+	border-radius: 5px;
+	background-color:#badee6; 
+	padding:5px 20px;
+	margin-right: 10px;
+	margin-left: 10px;
+	list-style: none;
+	display: inline-block;
+}
+
+#header .navbar li:hover{
+	box-shadow: 0px 0px  10px black;
+}
+
+#header .navbar a{
+	text-decoration: none;
+	color: black;
+}
+.container{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#main{
+	float:left;
+	width: 100%;
+
+}
+
+#profiledetails{
+	width: 300px;
+	height: inherit;
+	border-right: 1px solid purple;
+	padding: 20px 10px;
+}
+
+#profiledetails h5{
+	margin: 10px 5px;
+}
+
+#userprofile{
+	display:inline-block;
+	width:100px;
+	float:right;
+	
+}
+#userprofile img{
+	border:2px solid black;
+	transform: translateY(-10px);
+	border-radius: 25px
+}
+
+#main .allposts{
+
+	border:1px solid purple;
+	padding: 10px;
+	width:60%;
+	transform: translateX(200px);
+	border-radius: 8px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#main .allposts h2{
+	color:#9944a6;
+
+}
+
+#main .title h2{
+	width:500px;
+	display:inline-block;
+	margin-left: 10px;
+	transform: translateY(-10px);
+}
+
+#main .title a{
+	text-decoration: none;
+	color:purple;
+}
+
+#uploadedimg{
+	display:block;
+	margin-bottom: 10px;
+	border:1px solid black;
+}
+
+#profileimg{
+	border:1px solid black;
+
+}
+.postbrief{
+	margin-top: 8px;
+}
+
+#viewpost{
+	
+	text-decoration: none;
+	display:inline-block;
+	margin:10px 10px;
+
+}
+
