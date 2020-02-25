@@ -17,7 +17,7 @@
             </div>
             <div class="navbar">
                 <ul>
-                    <li><a href="../view/Loginpage.php">Sign In</a></li>
+                    <li><a href="../index.php/view/Loginpage.php">Sign In</a></li>
                     <li><a href="../view/register.php">Sign Up</a></li>
                 </ul>
 
@@ -44,7 +44,7 @@
 
                     ?>
 
-                    <h2><a id='viewpost' href='../controller/viewpostNotlogged.php?pid=<?php echo $rowno['post_id'];?>'><?php echo $rowno['post_title'];?></a></h2>
+                    <h2><a id='viewpost' href='../index.php/controller/viewpostNotlogged.php?pid=<?php echo $rowno['post_id'];?>'><?php echo $rowno['post_title'];?></a></h2>
 
                     <?php
                     if($rowno['upload_image']){

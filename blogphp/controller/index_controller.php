@@ -9,4 +9,4 @@ $p = $blog1->getPosts();
 
 
 //index page theme
-include('../view/index.php');
+include('../view/indextheme.php');

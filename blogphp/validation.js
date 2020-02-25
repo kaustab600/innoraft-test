@@ -16,7 +16,7 @@ document.getElementById('lname').onblur = function(){
 	}	
 }
 
-document.getElementById('mail').onkeyup = function(){
+document.getElementById('mail').onblur = function(){
 	
 	var email = document.getElementById('mail').value;
 

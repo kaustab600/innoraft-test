@@ -1,12 +1,49 @@
 <?php
     // controller of register.php 
 
+    //var_dump($_POST);
     //autoloading model
     require('../vendor/autoload.php');
     use blogs\users;
+
+           /* //validating users first and lastname
+            $res = array("options"=>array("regexp"=>"/^[a-zA-Z]+$/"));
+            if(!filter_var('fname', FILTER_VALIDATE_REGEXP,$res)) 
+            {
+                echo "Enter valid name";
+                exit;
+            }
+            if(!filter_var('lname', FILTER_VALIDATE_REGEXP,$res)) 
+            {
+                echo "Enter valid name";
+                exit;
+            }
+
+            //validating users email
+            $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+            if( false == $email) {
+                echo "Enter valid email";
+                exit;
+            }
+
+            //validating users password
+            $password = filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_STRING);
+            if(false == $password) {
+                echo "Enter valid valid pass";
+                exit;
+            }
+            $crfmpass = filter_input(INPUT_POST, 'crfmpass', FILTER_SANITIZE_STRING);
+            if(false == $crfmpass) {
+                echo "Enter valid valid confirm pass";
+                exit;
+            }
+            if($password != $crfmpass) {
+                echo 'Password and confirm password not match';
+                exit;
+            }*/
     
     if(isset($_POST['submit'])){
-
+        echo "inside post";
         $img ="";
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
@@ -36,16 +73,16 @@
         //checking fname or lname or email is valid or not
         if(!preg_match('/^[a-zA-Z]+$/', $fname) or !preg_match('/^[a-zA-Z]+$/', $lname) or !preg_match('/^\w*[-]?\w+@\w+(\.\w{2,3}){1,3}$/',$mail ) ){
 
-            echo "<script>alert('invalid fname or lname or email');</script>";
+            echo "invalid fname or lname or email";
         }
         //checking if password and confirm password are same or not
         elseif($pass!=$crmp){
 
-            echo "<script>alert('password and confirm password doesnot match');</script>";
+            echo "password and confirm password doesnot match";
         }
         elseif(!empty($row)){
 
-            echo "<script>alert('username exits! please enter a unique username');</script>";
+            echo "username exits! please enter a unique username";
         }
         else{
 
@@ -57,9 +94,10 @@
             }
             
             $user1->insertUser($fname,$lname,$username,$status,$mail,$pass,$country,$gen,$img);
+           // echo "all good";
         }
 
     }
 
 
-?>
+?> 
