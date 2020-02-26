@@ -13,16 +13,16 @@
             <div id="logo">
                 <p>BLOGS!</p>
             </div>
-            <div id="userprofile"><a href="profile.php"><?php echo "<img src= '../profilepics/".$rows[0]['user_image']."' width='50px'/>"; ?></a></div>
+            <div id="userprofile"><a href="/php%20test/blogphp/index.php/profile"><?php echo "<img src= '../profilepics/".$rows[0]['user_image']."' width='50px'/>"; ?></a></div>
             <div class="navbar">
                 <ul>
-                    <li><a href="../controller/addpost.php">Add Post</a></li>
-                    <li><a href="../controller/homepage_controller.php">Home</a></li>
+                    <li><a href="/php%20test/blogphp/index.php/addpost">Add Post</a></li>
+                    <li><a href="/php%20test/blogphp/index.php/homepage_controller">Home</a></li>
                 </ul>
 
             </div>
             <div id="logout">
-                <a href="../controller/logout.php">Logout</a>
+                <a href="/php%20test/blogphp/index.php/controller/logout.php">Logout</a>
             </div>
         </div>
     </div>

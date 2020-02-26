@@ -7,7 +7,7 @@ if(!isset($_SESSION['uid'])){
 $userid = $_SESSION['uid'];
 
 
-require('../vendor/autoload.php');
+require('./vendor/autoload.php');
 use blogs\users;
 use blogs\blog;
 
@@ -24,4 +24,4 @@ $q1 = "select p.post_id ,p.user_id,u.user_name,u.user_image,p.post_title, p.post
 $rows = $blog1->get_all_Posts($q1);
 
 //homepage theme
-include('../view/homepage.php');
+include('./view/homepage.php');

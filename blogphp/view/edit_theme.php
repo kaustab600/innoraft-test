@@ -15,8 +15,8 @@
             <div id="profilelogo"><?php echo "<img src= '../profilepics/".$u[0]['user_image']."' width='50px'/>"; ?></div>
             <div class="navbar">
                 <ul>
-                    <li><a href="../controller/profile.php"><?php echo $u[0]['user_name'];  ?></a></li>
-                    <li><a href="../controller/homepage_controller.php">Home</a></li>
+                    <li><a href="/php%20test/blogphp/index.php/profile.php"><?php echo $u[0]['user_name'];  ?></a></li>
+                    <li><a href="/php%20test/blogphp/index.php/homepage_controller">Home</a></li>
                 </ul>
 
             </div>

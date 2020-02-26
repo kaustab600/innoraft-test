@@ -3,9 +3,9 @@
 <html>
 <head>
     <title>Main Page</title>
-    <link rel="stylesheet" type="text/css" href="../styles/stylehome.css?v=1">
+    <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/stylehome.css?v=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="../myscript.js"></script>
+    <script src="/php%20test/blogphp/myscript.js"></script>
 </head>
 <body>
 
@@ -17,8 +17,8 @@
             </div>
             <div class="navbar">
                 <ul>
-                    <li><a href="../index.php/view/Loginpage.php">Sign In</a></li>
-                    <li><a href="../view/register.php">Sign Up</a></li>
+                    <li><a href="/php%20test/blogphp/index.php/index.php/view/Loginpage">Sign In</a></li>
+                    <li><a href="/php%20test/blogphp/index.php/index/view/register">Sign Up</a></li>
                 </ul>
 
             </div>
@@ -37,20 +37,20 @@
                     {
 
                     ?>
-                        <a href='../controller/seeprofiles.php?uid=<?php echo $rowno['user_id']; ?>'><img id='profileimg' src='../profilepics/<?php echo $rowno['user_image'];?>' width='50px' style='border-radius:50%' /></a>
+                        <a href='/php%20test/blogphp/index.php/controller/seeprofiles.php?uid=<?php echo $rowno['user_id']; ?>'><img id='profileimg' src='/php%20test/blogphp/profilepics/<?php echo $rowno['user_image'];?>' width='50px' style='border-radius:50%' /></a>
                     <?php 
 
                     }
 
                     ?>
 
-                    <h2><a id='viewpost' href='../index.php/controller/viewpostNotlogged.php?pid=<?php echo $rowno['post_id'];?>'><?php echo $rowno['post_title'];?></a></h2>
+                    <h2><a id='viewpost' href='/php%20test/blogphp/index.php/controller/viewpostNotlogged.php?pid=<?php echo $rowno['post_id'];?>'><?php echo $rowno['post_title'];?></a></h2>
 
                     <?php
                     if($rowno['upload_image']){
 
                     ?>
-                    <a id='viewpost' href='../controller/viewpostNotlogged.php?pid=<?php echo $rowno['post_id'];?>'><img id='uploadedimg' src='../postimages/<?php echo $rowno['upload_image'];?>' width='250px' style='border-radius:10px'/></a>
+                    <a id='viewpost' href='/php%20test/blogphp/index.php/controller/viewpostNotlogged.php?pid=<?php echo $rowno['post_id'];?>'><img id='uploadedimg' src='/php%20test/blogphp/postimages/<?php echo $rowno['upload_image'];?>' width='250px' style='border-radius:10px'/></a>
                     <?php
                     }
                     ?>

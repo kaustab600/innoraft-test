@@ -1,5 +1,5 @@
 <?php
-require('../vendor/autoload.php');
+require('./vendor/autoload.php');
 use blogs\blog;
 use blogs\users;
  session_start();
@@ -19,12 +19,12 @@ if(isset($_GET['pid']) and isset($_SESSION['uid'])){
     $u = $user1->get_all_Users($query);
 
     // including view post theme
-    include('../view/viewposttheme.php');
+    include('./view/viewposttheme.php');
 
 }
 else{
         
-    header('Location:logout.php');
+    header('Location:/php%20test/blogphp/index.php/logout.php');
 }
 
 

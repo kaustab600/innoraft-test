@@ -13,16 +13,16 @@
             <div id="logo">
                 <p>BLOGS!</p>
             </div>
-            <div id="userprofile"><a href="../controller/profile.php"><?php echo "<img src= '../profilepics/".$u[0]['user_image']."' width='50px'/>"; ?></a></div>
+            <div id="userprofile"><a href="/php%20test/blogphp/index.php/profile"><?php echo "<img src= '../profilepics/".$u[0]['user_image']."' width='50px'/>"; ?></a></div>
             <div class="navbar">
                 <ul>
-                    <li><a href="../controller/addpost.php">Add Post</a></li>
-                    <li><a href="../controller/homepage_controller.php">Home</a></li>
+                    <li><a href="/php%20test/blogphp/index.php/addpost">Add Post</a></li>
+                    <li><a href="/php%20test/blogphp/index.php/homepage_controller">Home</a></li>
                 </ul>
 
             </div>
             <div id="logout">
-                <a href="../controller/logout.php">Logout</a>
+                <a href="/php%20test/blogphp/index.php/controller/logout.php">Logout</a>
             </div>
         </div>
     </div>
@@ -49,9 +49,9 @@
                     <hr>
                     <h5><?php echo $rowno['post_content'];?></h5>
                     </div>
-                    <a id='viewpost' href='../controller/edit.php?pid=<?php echo $rowno['post_id']; ?>'>Edit</a>
+                    <a id='viewpost' href='/php%20test/blogphp/index.php/edit?pid=<?php echo $rowno['post_id']; ?>'>Edit</a>
                 <?php
-                    echo "<a id='viewpost' onClick=\"javascript: return confirm('Please confirm deletion');\" href='../controller/deletepost.php?pid=".$rowno['post_id']."'>Delete</a>";
+                    echo "<a id='viewpost' onClick=\"javascript: return confirm('Please confirm deletion');\" href='/php%20test/blogphp/index.php/deletepost?pid=".$rowno['post_id']."'>Delete</a>";
                 ?>
                     </div>
                 <?php

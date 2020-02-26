@@ -1,6 +1,6 @@
 <?php
 
-require('../vendor/autoload.php');
+require('./vendor/autoload.php');
 use blogs\users;
 session_start();
 
@@ -23,6 +23,6 @@ elseif(!isset($_GET['userid']) or !isset($_SESSION['uid'])){
         echo "session id".$_SESSION['uid']." and getid =".$_GET['userid'];
     }
       
-    include('../view/seeprofilesLogged_theme.php'); 
+    include('./view/seeprofilesLogged_theme.php'); 
         
 ?>

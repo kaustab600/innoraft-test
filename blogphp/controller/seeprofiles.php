@@ -1,6 +1,6 @@
 <?php
    
-   require('../vendor/autoload.php');
+   require('./vendor/autoload.php');
     use blogs\users;
 
     if(isset($_GET['uid'])){
@@ -12,9 +12,9 @@
 
     }
     elseif(!isset($_GET['uid'])){
-        header('Location:logout.php');
+        header('Location:/php%20test/blogphp/index.php/logout.php');
     }
 
     //seeprofile theme
-    include('../view/seeprofiles_theme.php');
+    include('./view/seeprofiles_theme.php');
 ?>

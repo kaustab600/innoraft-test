@@ -14,12 +14,12 @@
         
             <div class="navbar">
                 <ul>
-                    <li><a href="../controller/edit_profile.php">Edit Profile</a></li>
-                    <li><a href="../controller/homepage_controller.php">Home</a></li>
+                    <li><a href="/php%20test/blogphp/index.php/controller/edit_profile">Edit Profile</a></li>
+                    <li><a href="/php%20test/blogphp/index.php/homepage_controller">Home</a></li>
                 </ul>               
             </div>
             <div id="logout">
-                <a href="../controller/logout.php">Logout</a>
+                <a href="/php%20test/blogphp/index.php/controller/logout.php">Logout</a>
             </div>
         </div>
         </div>

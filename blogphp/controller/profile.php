@@ -1,6 +1,6 @@
 <?php 
         session_start();
-        require('../vendor/autoload.php');
+        require('./vendor/autoload.php');
         use blogs\blog;
         use blogs\users;
 
@@ -13,10 +13,10 @@
             $u = $user1->get_all_Users($query);
 
             // including view edit theme
-            include('../view/profile_theme.php');
+            include('./view/profile_theme.php');
         }
         else{
-          header('Location:logout.php');
+          header('Location:/php%20test/blogphp/index.php/logout.php');
         }
 
             

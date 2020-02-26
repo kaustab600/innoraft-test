@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Profile</title>
-    <link rel="stylesheet" type="text/css" href="../styles/styleprofile.css?v=1">
+    <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/styleprofile.css?v=1">
 </head>
 <body>
         <div id="header">
@@ -15,7 +15,7 @@
             
             <div class="navbar">
                 <ul>
-                    <li><a href="../controller/index_controller.php">Home</a></li>
+                    <li><a href="/php%20test/blogphp/index.php/controller/index_controller">Home</a></li>
                 </ul>               
             </div>
         </div>
@@ -29,7 +29,7 @@
                         }
                         else{
                             //echo $rows['user_image'];
-                            echo "<img src='../profilepics/".$rows[0]['user_image']."' width='200px' style='border:1px solid black' /><br>";      
+                            echo "<img src='/php%20test/blogphp/profilepics/".$rows[0]['user_image']."' width='200px' style='border:1px solid black' /><br>";      
                         }
 
                  ?>

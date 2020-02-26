@@ -11,16 +11,16 @@
             <div id="logo">
                 <p>BLOGS!</p>
             </div>
-            <div id="profilelogo"><a href="profile.php"><?php echo "<img src= '../profilepics/".$u[0]['user_image']."' width='50px'/>"; ?></a></div>
+            <div id="profilelogo"><a href="/php%20test/blogphp/index.php/profile"><?php echo "<img src= '../profilepics/".$u[0]['user_image']."' width='50px'/>"; ?></a></div>
             <div class="navbar">
                 <ul>
-                    <li><a href="../controller/edit_post.php">My Posts</a></li>
-                    <li><a href="../controller/homepage_controller.php">Home</a></li>
+                    <li><a href="/php%20test/blogphp/index.php/edit_post">My Posts</a></li>
+                    <li><a href="/php%20test/blogphp/index.php/homepage_controller">Home</a></li>
                 </ul>
 
             </div>
             <div id="logout">
-                <a href="../controller/logout.php">Logout</a>
+                <a href="/php%20test/blogphp/index.php/logout.php">Logout</a>
             </div>
         </div>
     </div>
@@ -49,7 +49,7 @@
                     
                     $file_tmp =$_FILES['pic']['tmp_name'];
                     
-                    if(move_uploaded_file($file_tmp,"postimages/".$file_name)){
+                    if(move_uploaded_file($file_tmp,"/php%20test/blogphp/postimages/".$file_name)){
 
                         $img = $_FILES['pic']['name'];
                     }
@@ -57,7 +57,10 @@
                     $title = $_POST['title'];
                     $content = $_POST['content'];
 
-                    $blog1->addPosts($_SESSION['uid'],$title,$content,$file_name);
+                    $status = $blog1->addPosts($_SESSION['uid'],$title,$content,$file_name);
+                    if($status == 1){
+                        header('Location:/php%20test/blogphp/index.php/homepage_controller.php');
+                    }
 
                 }
 

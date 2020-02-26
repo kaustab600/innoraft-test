@@ -3,7 +3,7 @@
 
     //var_dump($_POST);
     //autoloading model
-    require('../vendor/autoload.php');
+    require('./vendor/autoload.php');
     use blogs\users;
 
            /* //validating users first and lastname
@@ -86,7 +86,7 @@
         }
         else{
 
-            if( move_uploaded_file($file_tmp,"../profilepics/".$file_name)){
+            if( move_uploaded_file($file_tmp,"/php%20test/blogphp/profilepics/".$file_name)){
                 
                 echo "Success";
                 $img = $_FILES['profilepic']['name'];

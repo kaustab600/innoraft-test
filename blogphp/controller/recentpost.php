@@ -1,11 +1,11 @@
 <?php 
-      require('../vendor/autoload.php');
+      require('./vendor/autoload.php');
       use blogs\blog;
       use blogs\users;
 
         session_start();
         if(!isset($_SESSION['uid']) or !isset($_GET['authorid'])){
-            header('Location:logout.php');
+            header('Location:/php%20test/blogphp/index.php/logout.php');
         }
         $userid = $_SESSION['uid'];
         $authorid= $_GET['authorid'];
@@ -20,5 +20,5 @@
         $blog_details = $blog1->get_all_Posts($q1);
 
         //Theme for recentpost
-        include('../view/recentpost_theme.php');
+        include('./view/recentpost_theme.php');
 ?>

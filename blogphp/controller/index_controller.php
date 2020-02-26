@@ -1,12 +1,11 @@
 <?php
 
-require('../vendor/autoload.php');
+require('./vendor/autoload.php');
 use blogs\blog;
 
 $blog1 = new blog();
 
 $p = $blog1->getPosts();
 
-
 //index page theme
-include('../view/indextheme.php');
+include('./view/indextheme.php');

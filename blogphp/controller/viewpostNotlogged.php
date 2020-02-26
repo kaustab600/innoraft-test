@@ -1,6 +1,6 @@
 <?php
 
-require('../vendor/autoload.php');
+require('./vendor/autoload.php');
 use blogs\blog;
 use blogs\users;
 
@@ -11,11 +11,11 @@ if(isset($_GET['pid'])){
     $contents = new blog();
     $rowno = $contents->get_all_Posts($q1);
 
-    include('../view/viewNotlogged_Theme.php');
+    include('./view/viewNotlogged_Theme.php');
 }
 else{
 
-    header('Location:logout.php');
+    header('Location:/php%20test/blogphp/index.php/logout.php');
 }
 
 

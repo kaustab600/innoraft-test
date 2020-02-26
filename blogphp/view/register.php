@@ -4,11 +4,11 @@
 <html>
 <head>
     <title>Sign Up</title>
-    <link rel="stylesheet" type="text/css" href="../styles/registerpage.css">
+    <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/registerpage.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
        
-    $(document).ready(function(){
+    /*$(document).ready(function(){
 
         $('#frm1').submit(function(event){
 
@@ -27,7 +27,7 @@
                     $('#alertshow').html(result);
                 })
             });
-    });
+    });*/
     </script>
 </head>
 <body>
@@ -37,10 +37,10 @@
                 <p>BLOGS!</p>
             </div>
             <div id="sigup">
-                <a href="Loginpage.php">Sign In</a>
+                <a href="/php%20test/blogphp/index.php/Loginpage">Sign In</a>
             </div>
             <div id="sigup">
-                <a href="../controller/index_controller.php">Home</a>
+                <a href="/php%20test/blogphp/index.php/controller/index_controller">Home</a>
             </div>
         </div>
     </div>
@@ -79,13 +79,13 @@
                     <input type="submit" id="register" name="submit" value="Register">
                 </form>
             </div>
-            <div id="wallpaper"><img src="../images/blogregister.jpeg"></div>
+            <div id="wallpaper"><img src="/php%20test/blogphp/images/blogregister.jpeg"></div>
         </div>
     </div>
     <!-- <script src="../validation.js"></script> -->
 </body>
 <?php 
     //including controller of register.php
-   /* require('../controller/signup.php');*/
+    require('./controller/signup.php');
 ?>
 </html>

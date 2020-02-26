@@ -52,7 +52,7 @@ namespace blogs;
                      $postid = $_GET['pid'];
                     /*$img ="";*/
                   
-                    if(move_uploaded_file($file_tmp,"postimages/".$file_name)){
+                    if(move_uploaded_file($file_tmp,"/php%20test/blogphp/postimages/".$file_name)){
 
                         $img = $_FILES['pic']['name'];
                     }
@@ -69,7 +69,7 @@ namespace blogs;
                     $update_content = $conn->query($q2);
                     if($update_content){
                         //echo "sucessfully updated";
-                        header('Location:../controller/edit_post.php');
+                        header('Location:/php%20test/blogphp/index.php/edit_post');
                     }
                     else{
                         echo "not updated";
@@ -87,7 +87,8 @@ namespace blogs;
           $update_content = $conn->query($q2);
                     if($update_content){
                         echo "sucessfully updated";
-                        header('Location:../controller/homepage_controller.php');
+                        return 1;
+                        
                     }
                     else{
                         echo "not updated";

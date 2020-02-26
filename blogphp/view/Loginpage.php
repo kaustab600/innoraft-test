@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Blog Page</title>
-    <link rel="stylesheet" type="text/css" href="../styles/styleindex.css">
+    <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/styleindex.css">
 </head>
 <body>
     <div id="header">
@@ -11,10 +11,10 @@
                 <p>BLOGS!</p>
             </div>
             <div id="sigup">
-                <a href="register.php">Sign Up</a>
+                <a href="./index.php/register">Sign Up</a>
             </div>
             <div id="sigup">
-                <a href="../controller/index_controller.php">Home</a>
+                <a href="/php%20test/blogphp/index.php/index_controller">Home</a>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
         <div class="container">
             <div id="signin1">
                 
-                <form action='' name="frm1" id="signin" method="post" >
+                <form name="frm1" id="signin" method="post">
                     <h2>Login In</h2>
                     <label for="username">Username</label>
                     <input type="text" name="username">
@@ -33,9 +33,9 @@
             </div>
         </div>
     </div>
-    <?php 
+     <?php 
         // including Loginpage controller
-        include('../controller/signin.php');
-    ?>
+        include('./controller/signin.php');
+    ?> 
 </body>
 </html>

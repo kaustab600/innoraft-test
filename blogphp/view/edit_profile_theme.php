@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Profile</title>
-    <link rel="stylesheet" type="text/css" href="../styles/style_edit_profile.css">
+    <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/style_edit_profile.css">
 </head>
 <body>
    
@@ -14,11 +14,11 @@
             </div>
             
             <div id="logout">
-                <a href="../controller/logout.php">Logout</a>
+                <a href="/php%20test/blogphp/index.php/logout.php">Logout</a>
             </div>
             <div class="navbar">
                 <ul>
-                    <li><a href="../controller/homepage_controller.php">Home</a></li>
+                    <li><a href="/php%20test/blogphp/index.php/homepage_controller">Home</a></li>
                 </ul>               
             </div>
         </div>
@@ -52,12 +52,14 @@
             $file_size =$_FILES['profilepic']['size'];
             $file_tmp =$_FILES['profilepic']['tmp_name'];
             $file_type=$_FILES['profilepic']['type'];
-            if(move_uploaded_file($file_tmp,"../profilepics/".$file_name)) {
+            
+            if(move_uploaded_file($file_tmp,"./profilepics/".$file_name)) {
                 
                 echo "Success";
-
-                }
-            else{ 
+                //header('location:/php%20test/blogphp/index.php/logout.php');
+            }
+            else{   
+                    echo " <script> alert('not sucessful');</script>";
                     $file_name = $u[0]['user_image'];
             }
 
