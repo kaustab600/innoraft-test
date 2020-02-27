@@ -13,7 +13,7 @@
                     
           <div class="navbar">
               <ul>
-                  <li><a href="/php%20test/blogphp/index.php/homepage_controller">Home</a></li>
+                  <li><a href="homepage_controller">Home</a></li>
               </ul>
           </div>
         </div>

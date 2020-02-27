@@ -11,10 +11,10 @@
                 <p>BLOGS!</p>
             </div>
             <div id="sigup">
-                <a href="./index.php/register">Sign Up</a>
+                <a href="register">Sign Up</a>
             </div>
             <div id="sigup">
-                <a href="/php%20test/blogphp/index.php/index_controller">Home</a>
+                <a href="index_controller">Home</a>
             </div>
         </div>
     </div>

@@ -3,7 +3,8 @@
 <html>
 <head>
     <title>Edit Post</title>
-    <link rel="stylesheet" type="text/css" href="../styles/editcontent.css">
+    <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/editcontent.css">
+       <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 </head>
 <body>
     <div id="header">
@@ -35,7 +36,11 @@
                         <h2>Title</h2>
                         <input type="text" name="title">
                         <h3>Content</h3>
-                        <textarea cols="60" rows="10" name="content" ></textarea>
+                        <textarea name="content"></textarea>
+                        <script>
+                        CKEDITOR.replace( 'content' );
+                       </script>
+                        <!-- <textarea cols="60" rows="10" name="content" ></textarea> -->
                         <input type="submit" name="submit" value="save">
                     </form>
                 </div>
@@ -59,7 +64,7 @@
 
                     $status = $blog1->addPosts($_SESSION['uid'],$title,$content,$file_name);
                     if($status == 1){
-                        header('Location:/php%20test/blogphp/index.php/homepage_controller.php');
+                        header('Location:/php%20test/blogphp/index.php/homepage_controller');
                     }
 
                 }

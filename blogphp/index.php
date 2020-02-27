@@ -2,7 +2,6 @@
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $foldername = basename($_SERVER['REQUEST_URI']);
 if($foldername == 'blogphp'){
-    echo "inside if";
     include('./controller/index_controller.php');
     exit;
 }

@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Profile</title>
-    <link rel="stylesheet" type="text/css" href="../styles/styleprofile.css?v=2">
+    <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/styleprofile.css?v=2">
 </head>
 <body>
         <div id="header">
@@ -12,14 +12,14 @@
                 <p>BLOG.</p>
             </div>
             
-            <div id="profilelogo"><?php echo "<img src= '../profilepics/".$rows[0]['user_image']."' width='50px'/>"; ?></div>
+            <div id="profilelogo"><?php echo "<img src= '/php%20test/blogphp/profilepics/".$rows[0]['user_image']."' width='50px'/>"; ?></div>
             <div id="logout">
-                <a href="/php%20test/blogphp/index.php/controller/logout.php">Logout</a>
+                <a href="logout.php">Logout</a>
             </div>
             <div class="navbar">
                 <ul>
-                    <li><a href="/php%20test/blogphp/index.php/homepage_controller">Home</a></li>
-                    <li><a href="/php%20test/blogphp/index.php/recentpost.php?authorid=<?php echo $author[0]['user_id']; ?>">Recent Posts</a></li>
+                    <li><a href="homepage_controller">Home</a></li>
+                    <li><a href="recentpost.php?authorid=<?php echo $author[0]['user_id']; ?>">Recent Posts</a></li>
                 </ul>               
             </div>
         </div>
@@ -33,7 +33,7 @@
                         }
                         else{
                             
-                            echo "<img src='../profilepics/".$author[0]['user_image']."' width='200px' style='border:1px solid black' /><br>";      
+                            echo "<img src='/php%20test/blogphp/profilepics/".$author[0]['user_image']."' width='200px' style='border:1px solid black' /><br>";      
                         }
 
                  ?>

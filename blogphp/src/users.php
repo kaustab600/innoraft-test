@@ -36,7 +36,7 @@ class users extends connect{
            $update_profile = $conn->query($q);
             if($update_profile){
                 echo "sucessfully updated";
-                header('Location:/php%20test/blogphp/index.php/homepage_controller');
+                header('Location:homepage_controller');
             }
             else{
                 echo $conn->connect_error;
@@ -54,7 +54,7 @@ class users extends connect{
 
          if($insertuser){
             echo "sucessfully registered";
-            header("Location:/php%20test/blogphp/index.php/Loginpage");
+            header("Location:Loginpage");
            
          }
          else{
@@ -77,11 +77,11 @@ class users extends connect{
                 session_start();
                 $row = $no_of_users->fetch_assoc();
                 $_SESSION['uid'] = $row['user_id'];
-                header('Location:/php%20test/blogphp/index.php/homepage_controller');
+                header('Location:homepage_controller');
             }
             else{
 
-               header('Location:/php%20test/blogphp/index.php/Loginpage?msg=invalid details');
+               header('Location:Loginpage?msg=invalid details');
             }
           
       }

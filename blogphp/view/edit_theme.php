@@ -3,7 +3,8 @@
 <html>
 <head>
     <title>Edit Post</title>
-    <link rel="stylesheet" type="text/css" href="../styles/editcontent.css?v=2">
+    <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/editcontent.css?v=2">
+       <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 </head>
 <body>
   
@@ -36,7 +37,7 @@
                         <input type="file" name="pic" ><br><br>
                         <?php 
                             if($rows[0]['upload_image']){
-                                echo "<img src='../postimages/".$rows[0]['upload_image']."' width='200px'>";
+                                echo "<img src='/php%20test/blogphp/postimages/".$rows[0]['upload_image']."' width='200px'>";
                             }
                             
                         ?>
@@ -45,6 +46,9 @@
                         <input type="text" name="title" value='<?php echo $rows[0]['post_title'];    ?>'>
                         <h3>Content</h3>
                         <textarea cols="60" rows="10" name="content" ><?php echo $rows[0]['post_content'];?></textarea>
+                        <script>
+                                CKEDITOR.replace( 'content' );
+                        </script>
                         <!--<input type="text" name="content" value='<?php //echo $rowsno['post_content'];    ?>'>-->
                         <input type="submit" name="submit" value="save">
                     </form>

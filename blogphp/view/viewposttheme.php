@@ -2,7 +2,7 @@
         <html>
         <head>
             <title>View Post</title>
-            <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/styleview_post.css?v=2">
+            <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/styleview_post.css">
         </head>
         <body>
               
@@ -11,16 +11,16 @@
                     <div id="logo">
                         <p>BLOGS!</p>
                     </div>
-                    <div id="profilelogo"><a href="/php%20test/blogphp/index.php/profile"><?php echo "<img src= '/php%20test/blogphp/profilepics/".$u[0]['user_image']."' width='50px'/>"; ?></a></div>
+                    <div id="profilelogo"><a href="profile"><?php echo "<img src= '/php%20test/blogphp/profilepics/".$u[0]['user_image']."' width='50px'/>"; ?></a></div>
                     <div class="navbar">
                         <ul>
-                            <li><a href="/php%20test/blogphp/index.php/homepage_controller">Home</a></li>
-                            <li><a href="/php%20test/blogphp/index.php/edit_post">Myposts</a></li>
+                            <li><a href="homepage_controller">Home</a></li>
+                            <li><a href="edit_post">Myposts</a></li>
                         </ul>
 
                     </div>
                     <div id="logout">
-                        <a href="/php%20test/blogphp/index.php/controller/logout.php">Logout</a>
+                        <a href="logout.php">Logout</a>
                     </div>
                 </div>
             </div>

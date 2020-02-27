@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Profile</title>
-    <link rel="stylesheet" type="text/css" href="../styles/styleprofile.css">
+    <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/styleprofile.css">
 </head>
 <body>
         <div id="header">
@@ -14,12 +14,12 @@
         
             <div class="navbar">
                 <ul>
-                    <li><a href="/php%20test/blogphp/index.php/controller/edit_profile">Edit Profile</a></li>
-                    <li><a href="/php%20test/blogphp/index.php/homepage_controller">Home</a></li>
+                    <li><a href="edit_profile">Edit Profile</a></li>
+                    <li><a href="homepage_controller">Home</a></li>
                 </ul>               
             </div>
             <div id="logout">
-                <a href="/php%20test/blogphp/index.php/controller/logout.php">Logout</a>
+                <a href="logout.php">Logout</a>
             </div>
         </div>
         </div>
@@ -33,7 +33,7 @@
                         }
                 else{
                         //echo $rows['user_image'];
-                        echo "<img src='../profilepics/".$u[0]['user_image']."' width='200px' style='border:1px solid black' />";      
+                        echo "<img src='/php%20test/blogphp/profilepics/".$u[0]['user_image']."' width='200px' style='border:1px solid black' />";      
                     }
 
                  ?>

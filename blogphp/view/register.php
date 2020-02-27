@@ -6,6 +6,7 @@
     <title>Sign Up</title>
     <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/registerpage.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <script>
        
     /*$(document).ready(function(){
@@ -37,10 +38,10 @@
                 <p>BLOGS!</p>
             </div>
             <div id="sigup">
-                <a href="/php%20test/blogphp/index.php/Loginpage">Sign In</a>
+                <a href="Loginpage">Sign In</a>
             </div>
             <div id="sigup">
-                <a href="/php%20test/blogphp/index.php/controller/index_controller">Home</a>
+                <a href="index_controller">Home</a>
             </div>
         </div>
     </div>

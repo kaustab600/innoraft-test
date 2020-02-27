@@ -3,9 +3,9 @@
 <html>
 <head>
     <title>My Posts</title>
-    <link rel="stylesheet" type="text/css" href="../styles/stylehome.css">
+    <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/stylehome.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- <script src="../myscript.js"></script>  -->
+    <script src="../myscript.js"></script> 
 </head>
 <body>
     <div id="header">
@@ -13,16 +13,16 @@
             <div id="logo">
                 <p>BLOGS!</p>
             </div>
-            <div id="userprofile"><a href="/php%20test/blogphp/index.php/profile"><?php echo "<img src= '../profilepics/".$u[0]['user_image']."' width='50px'/>"; ?></a></div>
+            <div id="userprofile"><a href="profile"><?php echo "<img src= '/php%20test/blogphp/profilepics/".$u[0]['user_image']."' width='50px'/>"; ?></a></div>
             <div class="navbar">
                 <ul>
-                    <li><a href="/php%20test/blogphp/index.php/addpost">Add Post</a></li>
-                    <li><a href="/php%20test/blogphp/index.php/homepage_controller">Home</a></li>
+                    <li><a href="addpost">Add Post</a></li>
+                    <li><a href="homepage_controller">Home</a></li>
                 </ul>
 
             </div>
             <div id="logout">
-                <a href="/php%20test/blogphp/index.php/controller/logout.php">Logout</a>
+                <a href="logout.php">Logout</a>
             </div>
         </div>
     </div>
@@ -38,7 +38,7 @@
             <?php        
                     if($rowno['upload_image']){
                 ?>
-                     <img id='uploadedimg' src='../postimages/<?php echo $rowno['upload_image']; ?>' width='250px'/>
+                     <img id='uploadedimg' src='/php%20test/blogphp/postimages/<?php echo $rowno['upload_image']; ?>' width='250px'/>
                 <?php
                     }
                 ?>
@@ -49,9 +49,9 @@
                     <hr>
                     <h5><?php echo $rowno['post_content'];?></h5>
                     </div>
-                    <a id='viewpost' href='/php%20test/blogphp/index.php/edit?pid=<?php echo $rowno['post_id']; ?>'>Edit</a>
+                    <a id='viewpost' href='edit?pid=<?php echo $rowno['post_id']; ?>'>Edit</a>
                 <?php
-                    echo "<a id='viewpost' onClick=\"javascript: return confirm('Please confirm deletion');\" href='/php%20test/blogphp/index.php/deletepost?pid=".$rowno['post_id']."'>Delete</a>";
+                    echo "<a id='viewpost' onClick=\"javascript: return confirm('Please confirm deletion');\" href='deletepost?pid=".$rowno['post_id']."'>Delete</a>";
                 ?>
                     </div>
                 <?php

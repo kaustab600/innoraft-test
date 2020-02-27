@@ -15,7 +15,7 @@
             
             <div class="navbar">
                 <ul>
-                    <li><a href="/php%20test/blogphp/index.php/controller/index_controller">Home</a></li>
+                    <li><a href="index_controller">Home</a></li>
                 </ul>               
             </div>
         </div>
