@@ -101,6 +101,14 @@ else{
           include('./view/register.php');
           exit;
         }
+        elseif($foldername == 'signup'){
+          include('./controller/signup.php');
+          exit;
+        }
+        elseif($foldername == 'validationAjax.php'){
+          include('./validationAjax.php');
+          exit;
+        }
     
 }
 

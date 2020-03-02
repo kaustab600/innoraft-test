@@ -3,6 +3,7 @@
 <head>
     <title>Blog Page</title>
     <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/styleindex.css">
+    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
 </head>
 <body>
     <div id="header">
@@ -28,6 +29,7 @@
                     <input type="text" name="username">
                     <br><label for="password">Password</label>
                     <input type="password" name="password">
+                    <!-- <div class="g-recaptcha" data-sitekey="6LdqKd0UAAAAAKJtrNtlDgVq_OEKZOfIDHMOBZbH"></div> -->
                     <br><input type="submit" name="submit" value="SignIn">
                 </form>
             </div>

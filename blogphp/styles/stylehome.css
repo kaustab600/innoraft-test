@@ -3,6 +3,7 @@
 body{
 
 	font-family: 'Montserrat', sans-serif;
+	
 
 }
 
@@ -152,6 +153,7 @@ body{
 	border-radius: 8px;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	background: url('../images/texture.jpg');
 }
 
 #main .allposts h2{
@@ -175,6 +177,7 @@ body{
 	display:block;
 	margin-bottom: 10px;
 	border:1px solid black;
+	width:100%;
 }
 
 #profileimg{

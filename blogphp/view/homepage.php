@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/stylehome.css">
+    <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/stylehome.css?v=2">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/php%20test/blogphp/myscript.js"></script>
 </head>
@@ -49,7 +49,7 @@
                 <?php
                     if($rowno['upload_image']){
                 ?>
-                     <a id='viewpost' href='viewpost.php?pid=<?php echo $rowno['post_id'];?>'><img id='uploadedimg' src='/php%20test/blogphp/postimages/<?php echo $rowno['upload_image'];?>' width='200px' height='150px' style='border-radius:10px'/></a>
+                     <a id='viewpost' href='viewpost.php?pid=<?php echo $rowno['post_id'];?>'><img id='uploadedimg' src='/php%20test/blogphp/postimages/<?php echo $rowno['upload_image'];?>' width='200px' height='100%' style='border-radius:10px'/></a>
                 <?php
                     }
                 ?>

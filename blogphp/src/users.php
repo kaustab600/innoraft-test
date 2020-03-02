@@ -86,6 +86,19 @@ class users extends connect{
           
       }
 
+      function usernameExits($username){
+        $conn = $this->connection();
+        $q1 = "select user_id from users where user_name ='".$username."'";
+
+        $no_of_users = $conn->query($q1);
+    
+        if( $no_of_users->num_rows >0){
+          return 1;
+        }
+        else{
+          return 0;
+        }
+      }
       
     }
 
