@@ -13,11 +13,11 @@
             <div id="logo">
                 <p>BLOG.</p>
             </div>
-            <div id="profilelogo"><?php echo "<img src= '../profilepics/".$u[0]['user_image']."' width='50px'/>"; ?></div>
+            <div id="profilelogo"><?php echo "<img src= '/php%20test/blogphp/profilepics/".$u[0]['user_image']."' width='50px'/>"; ?></div>
             <div class="navbar">
                 <ul>
-                    <li><a href="/php%20test/blogphp/index.php/profile.php"><?php echo $u[0]['user_name'];  ?></a></li>
-                    <li><a href="/php%20test/blogphp/index.php/homepage_controller">Home</a></li>
+                    <li><a href="profile.php"><?php echo $u[0]['user_name'];  ?></a></li>
+                    <li><a href="homepage_controller">Home</a></li>
                 </ul>
 
             </div>

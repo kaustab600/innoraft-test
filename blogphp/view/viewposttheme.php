@@ -2,7 +2,7 @@
         <html>
         <head>
             <title>View Post</title>
-            <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/styleview_post.css">
+            <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/styleview_post.css?v=1">
         </head>
         <body>
               

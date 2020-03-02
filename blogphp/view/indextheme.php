@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Main Page</title>
-    <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/stylehome.css?v=1">
+    <link rel="stylesheet" type="text/css" href="/php%20test/blogphp/styles/stylehome.css?v=2">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/php%20test/blogphp/myscript.js"></script>
 </head>

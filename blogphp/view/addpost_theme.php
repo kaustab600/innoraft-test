@@ -12,16 +12,16 @@
             <div id="logo">
                 <p>BLOGS!</p>
             </div>
-            <div id="profilelogo"><a href="/php%20test/blogphp/index.php/profile"><?php echo "<img src= '../profilepics/".$u[0]['user_image']."' width='50px'/>"; ?></a></div>
+            <div id="profilelogo"><a href="profile"><?php echo "<img src= '/php%20test/blogphp/profilepics/".$u[0]['user_image']."' width='50px'/>"; ?></a></div>
             <div class="navbar">
                 <ul>
-                    <li><a href="/php%20test/blogphp/index.php/edit_post">My Posts</a></li>
-                    <li><a href="/php%20test/blogphp/index.php/homepage_controller">Home</a></li>
+                    <li><a href="edit_post">My Posts</a></li>
+                    <li><a href="homepage_controller">Home</a></li>
                 </ul>
 
             </div>
             <div id="logout">
-                <a href="/php%20test/blogphp/index.php/logout.php">Logout</a>
+                <a href="logout.php">Logout</a>
             </div>
         </div>
     </div>
@@ -54,9 +54,13 @@
                     
                     $file_tmp =$_FILES['pic']['tmp_name'];
                     
-                    if(move_uploaded_file($file_tmp,"/php%20test/blogphp/postimages/".$file_name)){
+                    if(move_uploaded_file($file_tmp,"./postimages/".$file_name)){
 
                         $img = $_FILES['pic']['name'];
+
+                    }
+                    else{
+                        echo "<script>alert('image not uploaded');</script>";
                     }
                     
                     $title = $_POST['title'];
@@ -64,7 +68,7 @@
 
                     $status = $blog1->addPosts($_SESSION['uid'],$title,$content,$file_name);
                     if($status == 1){
-                        header('Location:/php%20test/blogphp/index.php/homepage_controller');
+                        header('Location:homepage_controller');
                     }
 
                 }

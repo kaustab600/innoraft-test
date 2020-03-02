@@ -1,7 +1,6 @@
 <?php
     // controller of register.php 
 
-    //var_dump($_POST);
     //autoloading model
     require('./vendor/autoload.php');
     use blogs\users;
@@ -25,7 +24,6 @@
         $file_tmp =$_FILES['profilepic']['tmp_name'];
         $file_type=$_FILES['profilepic']['type'];
 
-        var_dump($_POST);
         $user1 = new users();
 
         //validation of the user inputs
@@ -45,13 +43,11 @@
       
         else{
 
-            if( move_uploaded_file($file_tmp,"/php%20test/blogphp/profilepics/".$file_name)){   
+            if( move_uploaded_file($file_tmp,"./profilepics/".$file_name)){   
                 echo "Success";
                 $img = $_FILES['profilepic']['name'];
             }
             
-           // echo "all good";
-            //echo "<script>alert('all good');</script>";
             $user1->insertUser($fname,$lname,$username,$status,$mail,$pass,$country,$gen,$img);
         }
 

@@ -93,6 +93,7 @@ namespace blogs;
                     else{
                         echo "not updated";
                         echo mysqli_error($conn);
+                        return 0;
                     }
       }
 
